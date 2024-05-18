@@ -46,7 +46,7 @@ def print_welcome_text():
 
 
 # Function to print hangman logo
-# Code adapted from: 
+# Code adapted from:
 # https://realpython.com/python-main-function/
 def print_hangman_logo():
     hangman_logo = """
@@ -63,10 +63,24 @@ def print_hangman_logo():
     """
     print(hangman_logo)
 
+
+# Function to print the rules of the game
+def print_rules():
+    rules = """
+    Rules of Hangman:
+    1. You need to guess the word letter by letter.
+    2. You have a limited number of guesses (6 incorrect guesses).
+    3. Each incorrect guess brings the man closer to hanging.
+    4. If you guess the word before running out of attempts, you win!
+    5. If the man gets hanged, you lose.
+    """
+    print(rules)
+
 # Print the welcome text and the hangman logo
 def main():
     print_welcome_text()
     print_hangman_logo()
+    print_rules()
 
 if __name__ == "__main__":
     main()
