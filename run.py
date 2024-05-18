@@ -76,11 +76,114 @@ def print_rules():
     """
     print(rules)
 
-# Print the welcome text and the hangman logo
+
+# List of hangman drawings for each stage
+# Drawings inspired by:
+# https://www.youtube.com/watch?v=WV2zPAVRekY
+hangman_stages = [
+    """
+     _______
+    |/      |
+    |      
+    |      
+    |       
+    |      
+    |
+   _|___
+  |     |______
+  |____________|
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      
+    |       
+    |      
+    |
+   _|___
+  |     |______
+  |____________|
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |       |
+    |       |
+    |      
+    |
+   _|___
+  |     |______
+  |____________|
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \|
+    |       |
+    |      
+    |
+   _|___
+  |     |______
+  |____________|
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \|/
+    |       |
+    |      
+    |
+   _|___
+  |     |______
+  |____________|
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \|/
+    |       |
+    |      / 
+    |
+   _|___
+  |     |______
+  |____________|
+    """,
+    """
+     _______
+    |/      |
+    |      (_)
+    |      \|/
+    |       |
+    |      / \\
+    |
+   _|___
+  |     |______
+  |____________|
+    """
+]
+
+# Function to print the hangman drawing based on remaining attempts
+# Code adapted from https://www.youtube.com/watch?v=XwaEo4f17LU
+def print_hangman(attempts):
+    print(hangman_stages[6 - attempts])
+
+# Main function to run the game
 def main():
     print_welcome_text()
     print_hangman_logo()
     print_rules()
+
+    # Test the print_hangman function with different attempts
+    # Code from https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/
+    for i in range(7):
+        print(f"Attempt {i}:")
+        print_hangman(i)
+        print("\n")
 
 if __name__ == "__main__":
     main()
