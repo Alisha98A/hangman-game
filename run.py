@@ -218,6 +218,9 @@ def main():
                 display_word(word, guessed_letters)
                 print(f"Congratulations! You guessed the word '{word}'!")
                 break
+        else:
+            print(f"Game over! The word was '{word}'.")
+            print_hangman(0)
 
 
 if __name__ == "__main__":
