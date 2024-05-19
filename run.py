@@ -85,10 +85,13 @@ def print_rules():
     rules = """
     [bold]Rules of Hangman:[/bold]
     1. You need to guess the word letter by letter.
-    2. You have a limited number of guesses ([bold red]6 incorrect guesses[/bold red]).
+    2. You have a limited number of guesses (""" \
+    """[bold red]6 incorrect guesses[/bold red]).
     3. Each incorrect guess brings the man closer to hanging.
-    4. If you guess the word before running out of attempts, you [bold green]win[/bold green]!
-    5. If the man gets hanged, you [bold red]lose[/bold red].
+    4. If you guess the word before running out of attempts, you """ \
+    """[bold green]win[/bold green]!
+    5. If the man gets hanged, you """ \
+    """[bold red]lose[/bold red].
     """
     console.print(rules)
 
