@@ -214,6 +214,10 @@ def main():
                 attempts -= 1
                 print(f"Incorrect guess. You have {attempts} attempts left.")
                 print_hangman(attempts)
+            if all(letter in guessed_letters for letter in word):
+                display_word(word, guessed_letters)
+                print(f"Congratulations! You guessed the word '{word}'!")
+                break
 
 
 if __name__ == "__main__":
