@@ -189,6 +189,7 @@ def print_hangman(attempts):
     print(hangman_stages[6 - attempts])
 
 # Main function to run the game
+# Code inspired by: https://realpython.com/python-hangman/
 def main():
     print_welcome_text()
     print_hangman_logo()
