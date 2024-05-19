@@ -202,6 +202,9 @@ def main():
         while attempts > 0:
             display_word(word, guessed_letters)
             guess = input("Enter a letter: ").strip().upper()
+            if not guess.isalpha() or len(guess) != 1:
+                print("Invalid input. Please enter a single letter.")
+                continue
 
 
 if __name__ == "__main__":
