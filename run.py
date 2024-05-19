@@ -196,7 +196,10 @@ def main():
 
     start_game = input("Do you want to start the game? (yes/no): ").strip().lower()
     if start_game == 'yes':
+        word = choose_word()
+        guessed_letters = []
+        attempts = 6
 
-        
+    
 if __name__ == "__main__":
     main()
