@@ -200,6 +200,8 @@ def main():
         guessed_letters = []
         attempts = 6
         while attempts > 0:
+            display_word(word, guessed_letters)
+            guess = input("Enter a letter: ").strip().upper()
 
 
 if __name__ == "__main__":
