@@ -221,7 +221,8 @@ def main():
         else:
             print(f"Game over! The word was '{word}'.")
             print_hangman(0)
-
+    else:
+        print("Maybe next time!")
 
 if __name__ == "__main__":
     main()
