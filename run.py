@@ -3,8 +3,6 @@ from google.oauth2.service_account import Credentials
 import pyfiglet
 import random
 from rich.console import Console
-from rich.table import Table
-from rich.text import Text
 
 # Initialize Rich Console
 # Ideas taken from:
