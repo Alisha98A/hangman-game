@@ -84,7 +84,6 @@ def print_rules():
 def choose_word():
     return random.choice(words).upper()
 
-print(choose_word())
 
 # Function to display the current state of the word with guessed letters
 # https://www.w3schools.com/python/ref_string_join.asp
@@ -195,6 +194,8 @@ def main():
     print_hangman_logo()
     print_rules()
 
+    start_game = input("Do you want to start the game? (yes/no): ").strip().lower()
 
+    
 if __name__ == "__main__":
     main()
