@@ -2,6 +2,14 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
 import random
+from rich.console import Console
+from rich.table import Table
+from rich.text import Text
+
+# Initialize Rich Console
+# Ideas taken from:
+# https://www.youtube.com/watch?v=4zbehnz-8QU&t=143s
+console = Console()
 
 # Define the scopes required for accessing Google Sheets
 SCOPE = [
@@ -43,7 +51,7 @@ shareholder mail personality polish cereal storm illusion
 def print_welcome_text():
     text = "Welcome to Hangman Game!"
     ascii_art = pyfiglet.figlet_format(text)
-    print(ascii_art)
+    console.print(ascii_art, style="bold magenta")
 
 
 # Function to print hangman logo
@@ -62,20 +70,20 @@ def print_hangman_logo():
   |     |______
   |____________|
     """
-    print(hangman_logo)
+    console.print(hangman_logo, style="bold yellow")
 
 
 # Function to print the rules of the game
 def print_rules():
     rules = """
-    Rules of Hangman:
+    [bold]Rules of Hangman:[/bold]
     1. You need to guess the word letter by letter.
-    2. You have a limited number of guesses (6 incorrect guesses).
+    2. You have a limited number of guesses ([bold red]6 incorrect guesses[/bold red]).
     3. Each incorrect guess brings the man closer to hanging.
-    4. If you guess the word before running out of attempts, you win!
-    5. If the man gets hanged, you lose.
+    4. If you guess the word before running out of attempts, you [bold green]win[/bold green]!
+    5. If the man gets hanged, you [bold red]lose[/bold red].
     """
-    print(rules)
+    console.print(rules)
 
 
 # Function to choose a random word from the list
@@ -90,7 +98,7 @@ def choose_word():
 # https://www.youtube.com/watch?v=N_6YIClAor0
 def display_word(word, guessed_letters):
     displayed_word = ''.join([letter if letter in guessed_letters else '_' for letter in word])
-    print(f"Word: {displayed_word}")
+    console.print(f"Word: [bold green]{displayed_word}[/bold green]")
 
 
 # List of hangman drawings for each stage
@@ -186,7 +194,7 @@ hangman_stages = [
 # Function to print the hangman drawing based on remaining attempts
 # Code adapted from https://www.youtube.com/watch?v=XwaEo4f17LU
 def print_hangman(attempts):
-    print(hangman_stages[6 - attempts])
+    console.print(hangman_stages[6 - attempts], style="bold red")
 
 # Main function to run the game
 # Code inspired by: https://realpython.com/python-hangman/
@@ -195,35 +203,35 @@ def main():
     print_hangman_logo()
     print_rules()
 
-    start_game = input("Do you want to start the game? (yes/no): ").strip().lower()
+    start_game = console.input("Do you want to start the game? (yes/no): ").strip().lower()
     if start_game == 'yes':
         word = choose_word()
         guessed_letters = []
         attempts = 6
         while attempts > 0:
             display_word(word, guessed_letters)
-            guess = input("Enter a letter: ").strip().upper()
+            guess = console.input("Enter a letter: ").strip().upper()
             if not guess.isalpha() or len(guess) != 1:
-                print("Invalid input. Please enter a single letter.")
+                console.print("[bold red]Invalid input. Please enter a single letter.[/bold red]")
                 continue
             if guess in guessed_letters:
-                print("You already guessed that letter.")
+                console.print("[bold yellow]You already guessed that letter.[/bold yellow]")
             elif guess in word:
                 guessed_letters.append(guess)
-                print(f"Good guess! '{guess}' is in the word.")
+                console.print(f"[bold green]Good guess! '{guess}' is in the word.[/bold green]")
             else:
                 attempts -= 1
-                print(f"Incorrect guess. You have {attempts} attempts left.")
+                console.print(f"[bold red]Incorrect guess. You have {attempts} attempts left.[/bold red]")
                 print_hangman(attempts)
             if all(letter in guessed_letters for letter in word):
                 display_word(word, guessed_letters)
-                print(f"Congratulations! You guessed the word '{word}'!")
+                console.print(f"[bold green]Congratulations! You guessed the word '{word}'![/bold green]")
                 break
         else:
-            print(f"Game over! The word was '{word}'.")
+            console.print(f"[bold red]Game over! The word was '{word}'.[/bold red]")
             print_hangman(0)
     else:
-        print("Maybe next time!")
+        console.print("[bold yellow]Maybe next time![/bold yellow]")
 
 if __name__ == "__main__":
     main()
