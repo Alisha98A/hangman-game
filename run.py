@@ -199,7 +199,8 @@ def main():
         word = choose_word()
         guessed_letters = []
         attempts = 6
+        while attempts > 0:
 
-    
+
 if __name__ == "__main__":
     main()
