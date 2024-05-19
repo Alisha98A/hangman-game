@@ -77,6 +77,14 @@ def print_rules():
     print(rules)
 
 
+# Function to display the current state of the word with guessed letters
+# https://www.w3schools.com/python/ref_string_join.asp
+# https://www.youtube.com/watch?v=N_6YIClAor0
+def display_word(word, guessed_letters):
+    displayed_word = ''.join([letter if letter in guessed_letters else '_' for letter in word])
+    print(f"Word: {displayed_word}")
+
+
 # List of hangman drawings for each stage
 # Drawings inspired by:
 # https://www.youtube.com/watch?v=WV2zPAVRekY
@@ -178,12 +186,6 @@ def main():
     print_hangman_logo()
     print_rules()
 
-    # Test the print_hangman function with different attempts
-    # Code from https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/
-    for i in range(7):
-        print(f"Attempt {i}:")
-        print_hangman(i)
-        print("\n")
 
 if __name__ == "__main__":
     main()
