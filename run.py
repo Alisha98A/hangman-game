@@ -205,6 +205,8 @@ def main():
             if not guess.isalpha() or len(guess) != 1:
                 print("Invalid input. Please enter a single letter.")
                 continue
+            if guess in guessed_letters:
+                print("You already guessed that letter.")
 
 
 if __name__ == "__main__":
