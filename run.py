@@ -60,7 +60,7 @@ def print_hangman_logo():
      _______
     |/      |
     |      (_)
-    |      \|/
+    |     \\|/
     |       |
     |      / \\
     |
@@ -106,10 +106,10 @@ hangman_stages = [
     """
      _______
     |/      |
-    |      
-    |      
-    |       
-    |      
+    |
+    |
+    |
+    |
     |
    _|___
   |     |______
@@ -119,9 +119,9 @@ hangman_stages = [
      _______
     |/      |
     |      (_)
-    |      
-    |       
-    |      
+    |
+    |
+    |
     |
    _|___
   |     |______
@@ -133,7 +133,7 @@ hangman_stages = [
     |      (_)
     |       |
     |       |
-    |      
+    |
     |
    _|___
   |     |______
@@ -143,9 +143,9 @@ hangman_stages = [
      _______
     |/      |
     |      (_)
-    |      \|
+    |     \\|
     |       |
-    |      
+    |
     |
    _|___
   |     |______
@@ -155,9 +155,9 @@ hangman_stages = [
      _______
     |/      |
     |      (_)
-    |      \|/
+    |     \\|/
     |       |
-    |      
+    |
     |
    _|___
   |     |______
@@ -167,9 +167,9 @@ hangman_stages = [
      _______
     |/      |
     |      (_)
-    |      \|/
+    |     \\|/
     |       |
-    |      / 
+    |      /
     |
    _|___
   |     |______
@@ -179,7 +179,7 @@ hangman_stages = [
      _______
     |/      |
     |      (_)
-    |      \|/
+    |     \\|/
     |       |
     |      / \\
     |
@@ -189,10 +189,12 @@ hangman_stages = [
     """
 ]
 
+
 # Function to print the hangman drawing based on remaining attempts
 # Code adapted from https://www.youtube.com/watch?v=XwaEo4f17LU
 def print_hangman(attempts):
     console.print(hangman_stages[6 - attempts], style="bold red")
+
 
 # Main function to run the game
 # Code inspired by: https://realpython.com/python-hangman/
@@ -230,6 +232,7 @@ def main():
             print_hangman(0)
     else:
         console.print("[bold yellow]Maybe next time![/bold yellow]")
+
 
 if __name__ == "__main__":
     main()
