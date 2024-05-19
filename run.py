@@ -195,7 +195,8 @@ def main():
     print_rules()
 
     start_game = input("Do you want to start the game? (yes/no): ").strip().lower()
+    if start_game == 'yes':
 
-    
+        
 if __name__ == "__main__":
     main()
