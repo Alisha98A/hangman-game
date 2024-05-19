@@ -107,7 +107,10 @@ def choose_word():
 # https://www.w3schools.com/python/ref_string_join.asp
 # https://www.youtube.com/watch?v=N_6YIClAor0
 def display_word(word, guessed_letters):
-    displayed_word = ''.join([letter if letter in guessed_letters else '_' for letter in word])
+    displayed_word = ''.join([
+        letter if letter in guessed_letters else '_'
+        for letter in word
+    ])
     console.print(f"Word: [bold green]{displayed_word}[/bold green]")
 
 
