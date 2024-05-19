@@ -207,6 +207,13 @@ def main():
                 continue
             if guess in guessed_letters:
                 print("You already guessed that letter.")
+            elif guess in word:
+                guessed_letters.append(guess)
+                print(f"Good guess! '{guess}' is in the word.")
+            else:
+                attempts -= 1
+                print(f"Incorrect guess. You have {attempts} attempts left.")
+                print_hangman(attempts)
 
 
 if __name__ == "__main__":
