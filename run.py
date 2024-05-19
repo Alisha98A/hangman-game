@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
+import random
 
 # Define the scopes required for accessing Google Sheets
 SCOPE = [
@@ -76,6 +77,14 @@ def print_rules():
     """
     print(rules)
 
+
+# Function to choose a random word from the list
+# Code adapted from:
+# https://www.w3schools.com/python/ref_random_choice.asp
+def choose_word():
+    return random.choice(words).upper()
+
+print(choose_word())
 
 # Function to display the current state of the word with guessed letters
 # https://www.w3schools.com/python/ref_string_join.asp
