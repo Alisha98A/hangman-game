@@ -218,7 +218,10 @@ def main():
     print_hangman_logo()
     print_rules()
 
-    start_game = console.input("Do you want to start the game? (yes/no): ").strip().lower()
+    start_game = console.input(
+        "Do you want to start the game? (yes/no): "
+    ).strip().lower()
+
     if start_game == 'yes':
         word = choose_word()
         guessed_letters = []
@@ -226,24 +229,45 @@ def main():
         while attempts > 0:
             display_word(word, guessed_letters)
             guess = console.input("Enter a letter: ").strip().upper()
+
             if not guess.isalpha() or len(guess) != 1:
-                console.print("[bold red]Invalid input. Please enter a single letter.[/bold red]")
+                console.print(
+                    "[bold red]Invalid input. Please enter a single letter."
+                    "[/bold red]"
+                )
                 continue
+
             if guess in guessed_letters:
-                console.print("[bold yellow]You already guessed that letter.[/bold yellow]")
+                console.print(
+                    "[bold yellow]You already guessed that letter."
+                    "[/bold yellow]"
+                )
             elif guess in word:
                 guessed_letters.append(guess)
-                console.print(f"[bold green]Good guess! '{guess}' is in the word.[/bold green]")
+                console.print(
+                    f"[bold green]Good guess! '{guess}' is in the word."
+                    "[/bold green]"
+                )
             else:
                 attempts -= 1
-                console.print(f"[bold red]Incorrect guess. You have {attempts} attempts left.[/bold red]")
-                print_hangman(attempts)
+            console.print(
+                f"[bold red]Incorrect guess. You have {attempts} attempts left."
+                "[/bold red]"
+            )
+            print_hangman(attempts)
+
             if all(letter in guessed_letters for letter in word):
                 display_word(word, guessed_letters)
-                console.print(f"[bold green]Congratulations! You guessed the word '{word}'![/bold green]")
+                console.print(
+                    f"[bold green]Congratulations! You guessed the word '{word}'!"
+                    "[/bold green]"
+                )
                 break
         else:
-            console.print(f"[bold red]Game over! The word was '{word}'.[/bold red]")
+            console.print(
+                f"[bold red]Game over! The word was '{word}'."
+                "[/bold red]"
+            )
             print_hangman(0)
     else:
         console.print("[bold yellow]Maybe next time![/bold yellow]")
