@@ -259,12 +259,12 @@ def main():
                 )
             else:
                 attempts -= 1
-            console.print(
-                f"[bold red]Incorrect guess."
-                f" You have {attempts} attempts left."
-                "[/bold red]"
-            )
-            print_hangman(attempts)
+                guessed_letters.append(guess)
+                console.print(
+                    f"[bold red]Incorrect guess. You have"
+                    f" {attempts} attempts left.[/bold red]"
+                    )
+                print_hangman(attempts)
 
             if all(letter in guessed_letters for letter in word):
                 display_word(word, guessed_letters)
