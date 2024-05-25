@@ -218,9 +218,18 @@ def main():
     print_hangman_logo()
     print_rules()
 
-    start_game = console.input(
-        "Do you want to start the game? (yes/no): "
-    ).strip().lower()
+    while True:
+        start_game = console.input(
+            "Do you want to start the game?"
+            "(yes/no): "
+            ).strip().lower()
+        if start_game in ['yes', 'no']:
+            break
+        else:
+            console.print(
+                "[bold red]Invalid input."
+                " Please enter 'yes' or 'no'.[/bold red]"
+                )
 
     if start_game == 'yes':
         word = choose_word()
