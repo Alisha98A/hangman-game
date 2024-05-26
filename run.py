@@ -260,66 +260,48 @@ def main():
                           "Please enter 'yes' or 'no'.[/bold red]")
     show_rules = get_yes_no_input("Would you like to see "
                                   "the rules first? (yes/no): ")
-
     if show_rules == 'yes':
         clear_terminal()
         print_rules()
         print_hangman_logo()
 
     while True:
-        start_game = get_yes_no_input.input(
-            "Are you ready to start the game?"
-            "(yes/no): ")
+        start_game = get_yes_no_input("Are you ready to "
+                                      "start the game? (yes/no): ")
         if start_game == 'yes':
             clear_terminal()
             word = choose_word()
             guessed_letters = []
             attempts = 6
-        while attempts > 0:
-            display_word(word, guessed_letters)
-            guess = console.input("Enter a letter: ").strip().upper()
-
-            if not guess.isalpha() or len(guess) != 1:
-                console.print(
-                    "[bold red]Invalid input. Please enter a single letter."
-                    "[/bold red]"
-                )
-                continue
-
-            if guess in guessed_letters:
-                console.print(
-                    "[bold yellow]You already guessed that letter."
-                    "[/bold yellow]"
-                )
-            elif guess in word:
-                guessed_letters.append(guess)
-                console.print(
-                    f"[bold green]Good guess! '{guess}' is in the word."
-                    "[/bold green]"
-                )
-            else:
-                attempts -= 1
-                guessed_letters.append(guess)
-                console.print(
-                    f"[bold red]Incorrect guess. You have"
-                    f" {attempts} attempts left.[/bold red]"
-                    )
-                print_hangman(attempts)
-
-            if all(letter in guessed_letters for letter in word):
+            while attempts > 0:
                 display_word(word, guessed_letters)
-                console.print(
-                    f"[bold green]Congratulations!"
-                    f"You guessed the word '{word}'!"
-                    "[/bold green]"
-                )
-                break
-        else:
-            console.print(
-                f"[bold red]Game over! The word was '{word}'."
-                "[/bold red]"
-            )
-            print_hangman(0)
+                guess = console.input("Enter a letter: ").strip().upper()
+                if not guess.isalpha() or len(guess) != 1:
+                    console.print("[bold red]Invalid input. "
+                                  "Please enter a single letter.[/bold red]")
+                    continue
+                if guess in guessed_letters:
+                    console.print("[bold yellow]You already guessed "
+                                  "that letter.[/bold yellow]")
+                elif guess in word:
+                    guessed_letters.append(guess)
+                    console.print(f"[bold green]Good guess! '{guess}' "
+                                  f"is in the word.[/bold green]")
+                else:
+                    attempts -= 1
+                    guessed_letters.append(guess)
+                    console.print(f"[bold red]Incorrect guess. You have "
+                                  f"{attempts} attempts left.[/bold red]")
+                    print_hangman(attempts)
+                if all(letter in guessed_letters for letter in word):
+                    display_word(word, guessed_letters)
+                    console.print(f"[bold green]Congratulations! You guessed"
+                                  f" the word '{word}'![/bold green]")
+                    break
+            else:
+                console.print(f"[bold red]Game over! The word was "
+                              f"'{word}'.[/bold red]")
+                print_hangman(0)
             # Ask for player's name and save the score
             player_name = console.input("Enter your name: ").strip()
             score = (len(word) * 10) \
