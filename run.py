@@ -328,6 +328,17 @@ def main():
 
             add_score_to_scoreboard(player_name, score)
             console.print(f"[bold blue]Your score: {score}[/bold blue]")
+        next_action = get_yes_no_input("Do you want to play again? "
+                                       "(yes to play, no to see "
+                                       "the scoreboard "
+                                       "and then exit): ")
+
+        if next_action == 'no':
+            clear_terminal()
+            show_scoreboard()
+            console.print("[bold yellow]Thanks for playing! "
+                          " Goodbye![/bold yellow]")
+            break
 
 
 if __name__ == "__main__":
