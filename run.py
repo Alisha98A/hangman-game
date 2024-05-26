@@ -4,6 +4,8 @@ import pyfiglet
 import random
 from rich.console import Console
 import os
+from rich.text import Text
+from rich.align import Align
 
 # Initialize Rich Console
 # Ideas taken from:
@@ -68,7 +70,8 @@ def clear_terminal():
 def print_welcome_text():
     random_welcome_message = random.choice(welcome_messages)
     ascii_art = pyfiglet.figlet_format(random_welcome_message)
-    console.print(ascii_art, style="bold magenta")
+    styled_ascii_art = Text.from_markup(ascii_art, style="bold magenta")
+    console.print(Align.center(styled_ascii_art))
 
 
 # Function to print hangman logo
