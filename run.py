@@ -251,19 +251,15 @@ def main():
     clear_terminal()
     print_welcome_text()
 
-
-def get_yes_no_input(prompt):
-    while True:
-        show_rules = get_yes_no_input(
-            "Would you like to see "
-            "the rules first? (yes/no): ")
-        if show_rules in ['yes', 'no']:
-            break
-        else:
-            console.print(
-                "[bold red]Invalid input."
-                " Please enter 'yes' or 'no'.[/bold red]"
-                )
+    def get_yes_no_input(prompt):
+        while True:
+            response = console.input(prompt).strip().lower()
+            if response in ['yes', 'no']:
+                return response
+            console.print("[bold red]Invalid input. "
+                          "Please enter 'yes' or 'no'.[/bold red]")
+    show_rules = get_yes_no_input("Would you like to see "
+                                  "the rules first? (yes/no): ")
 
     if show_rules == 'yes':
         clear_terminal()
