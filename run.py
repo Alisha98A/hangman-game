@@ -216,7 +216,6 @@ def print_hangman(attempts):
 def main():
     clear_terminal()
     print_welcome_text()
-    print_hangman_logo()
 
     while True:
         show_rules = console.input(
