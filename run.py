@@ -295,10 +295,12 @@ def main():
                     console.print("[bold red]Invalid input. "
                                   "Please enter a single letter.[/bold red]")
                     continue
+                clear_terminal()
                 if guess in guessed_letters:
                     console.print("[bold yellow]You already guessed "
                                   "that letter.[/bold yellow]")
                 elif guess in word:
+                    clear_terminal()
                     guessed_letters.append(guess)
                     console.print(f"[bold green]Good guess! '{guess}' "
                                   f"is in the word.[/bold green]")
@@ -310,11 +312,13 @@ def main():
                                   f"{attempts} attempts left.[/bold red]")
                     print_hangman(attempts)
                 if all(letter in guessed_letters for letter in word):
+                    clear_terminal()
                     display_word(word, guessed_letters)
                     console.print(f"[bold green]Congratulations! You guessed"
                                   f" the word '{word}'![/bold green]")
                     break
             else:
+                clear_terminal()
                 console.print(f"[bold red]Game over! The word was "
                               f"'{word}'.[/bold red]")
                 print_hangman(0)
