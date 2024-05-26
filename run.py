@@ -267,10 +267,9 @@ def main():
         print_hangman_logo()
 
     while True:
-        start_game = console.input(
+        start_game = get_yes_no_input.input(
             "Are you ready to start the game?"
-            "(yes/no): "
-            ).strip().lower()
+            "(yes/no): ")
         if start_game in ['yes', 'no']:
             break
         else:
