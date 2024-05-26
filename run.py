@@ -273,7 +273,7 @@ def main():
         if start_game == 'yes':
             clear_terminal()
             word = choose_word()
-            guessed_letters []
+            guessed_letters = []
             attempts = 6
         while attempts > 0:
             display_word(word, guessed_letters)
