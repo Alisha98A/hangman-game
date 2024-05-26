@@ -305,7 +305,8 @@ def main():
                 else:
                     attempts -= 1
                     guessed_letters.append(guess)
-                    console.print(f"[bold red]Incorrect guess. You have "
+                    console.print(f"[bold red]You answered '{guess}'"
+                                  f" which was incorrect. You have "
                                   f"{attempts} attempts left.[/bold red]")
                     print_hangman(attempts)
                 if all(letter in guessed_letters for letter in word):
