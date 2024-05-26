@@ -251,10 +251,12 @@ def main():
     clear_terminal()
     print_welcome_text()
 
+
+def get_yes_no_input(prompt):
     while True:
-        show_rules = console.input(
-            "Would you like to see the rules first? (yes/no): "
-        ).strip().lower()
+        show_rules = get_yes_no_input(
+            "Would you like to see "
+            "the rules first? (yes/no): ")
         if show_rules in ['yes', 'no']:
             break
         else:
