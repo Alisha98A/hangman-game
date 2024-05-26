@@ -214,9 +214,27 @@ def print_hangman(attempts):
 # Main function to run the game
 # Code inspired by: https://realpython.com/python-hangman/
 def main():
+    clear_terminal()
     print_welcome_text()
     print_hangman_logo()
-    print_rules()
+
+    while True:
+        show_rules = console.input(
+            "Would you like to see the rules first? (yes/no): "
+        ).strip().lower()
+        if show_rules in ['yes', 'no']:
+            break
+        else:
+            console.print(
+                "[bold red]Invalid input."
+                " Please enter 'yes' or 'no'.[/bold red]"
+                )
+
+    if show_rules == 'yes':
+        clear_terminal()
+        print_welcome_text()
+        print_hangman_logo()
+        print_rules()
 
     while True:
         start_game = console.input(
@@ -232,6 +250,9 @@ def main():
                 )
 
     if start_game == 'yes':
+        clear_terminal()
+        print_welcome_text()
+        print_hangman_logo()
         word = choose_word()
         guessed_letters = []
         attempts = 6
