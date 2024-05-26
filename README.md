@@ -200,6 +200,7 @@ defining main functions https://realpython.com/python-main-function/
 https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/ for i in range method
 https://www.youtube.com/watch?v=XwaEo4f17LU list indexing
 learned how to make the drawing stages https://www.youtube.com/watch?v=WV2zPAVRekY
+https://www.vecteezy.com/vector-art/169193-gallows-illustration for the background image
 
 
 
