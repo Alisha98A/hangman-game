@@ -231,13 +231,12 @@ def main():
 
     if show_rules == 'yes':
         clear_terminal()
-        print_welcome_text()
-        print_hangman_logo()
         print_rules()
+        print_hangman_logo()
 
     while True:
         start_game = console.input(
-            "Do you want to start the game?"
+            "Are you ready to start the game?"
             "(yes/no): "
             ).strip().lower()
         if start_game in ['yes', 'no']:
@@ -250,8 +249,6 @@ def main():
 
     if start_game == 'yes':
         clear_terminal()
-        print_welcome_text()
-        print_hangman_logo()
         word = choose_word()
         guessed_letters = []
         attempts = 6
