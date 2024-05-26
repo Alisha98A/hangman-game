@@ -320,11 +320,6 @@ def main():
                 "[/bold red]"
             )
             print_hangman(0)
-    else:
-        console.print("[bold yellow]Maybe next time! :) \n"
-                      "If you regret your decision,"
-                      "just run the program again"
-                      "[/bold yellow]")
 
 
 if __name__ == "__main__":
