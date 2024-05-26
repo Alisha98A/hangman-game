@@ -211,6 +211,16 @@ def print_hangman(attempts):
     console.print(hangman_stages[6 - attempts], style="bold red")
 
 
+def add_score_to_scoreboard(name, score):
+    """
+    Add user name and score to the Google Sheets scoreboard.
+    """
+    try:
+        scoreboard.append_row([name, score])
+    except Exception as e:
+        console.print(f"[bold red]Error adding score: {e}[/bold red]")
+
+
 # Main function to run the game
 # Code inspired by: https://realpython.com/python-hangman/
 def main():
