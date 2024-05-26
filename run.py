@@ -221,6 +221,30 @@ def add_score_to_scoreboard(name, score):
         console.print(f"[bold red]Error adding score: {e}[/bold red]")
 
 
+def show_scoreboard():
+    console.print("[bold magenta]Scoreboard:[/bold magenta]")
+    try:
+        headers = scoreboard.row_values(1)
+        if 'Name' not in headers or 'Score' not in headers:
+            console.print(
+                          "[bold red]Headers 'Name' and 'Score'"
+                          "not found in the sheet.[/bold red]"
+                          )
+            return
+        records = scoreboard.get_all_records()
+        if not records:
+            console.print("[bold red]No scores available.[/bold red]")
+        else:
+            for record in records:
+                console.print(
+                    f"[bold cyan]{record['Name']}[/bold cyan]: "
+                    f"[bold green]{record['Score']}[/bold green]"
+                    )
+
+    except Exception as e:
+        console.print(f"[bold red]Error retrieving scoreboard: {e}[/bold red]")
+
+
 # Main function to run the game
 # Code inspired by: https://realpython.com/python-hangman/
 def main():
