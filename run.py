@@ -270,19 +270,11 @@ def main():
         start_game = get_yes_no_input.input(
             "Are you ready to start the game?"
             "(yes/no): ")
-        if start_game in ['yes', 'no']:
-            break
-        else:
-            console.print(
-                "[bold red]Invalid input."
-                " Please enter 'yes' or 'no'.[/bold red]"
-                )
-
-    if start_game == 'yes':
-        clear_terminal()
-        word = choose_word()
-        guessed_letters = []
-        attempts = 6
+        if start_game == 'yes':
+            clear_terminal()
+            word = choose_word()
+            guessed_letters []
+            attempts = 6
         while attempts > 0:
             display_word(word, guessed_letters)
             guess = console.input("Enter a letter: ").strip().upper()
