@@ -320,6 +320,14 @@ def main():
                 "[/bold red]"
             )
             print_hangman(0)
+            # Ask for player's name and save the score
+            player_name = console.input("Enter your name: ").strip()
+            score = (len(word) * 10) \
+                if all(letter in guessed_letters for letter in word) \
+                else 0
+
+            add_score_to_scoreboard(player_name, score)
+            console.print(f"[bold blue]Your score: {score}[/bold blue]")
 
 
 if __name__ == "__main__":
