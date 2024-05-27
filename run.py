@@ -258,7 +258,9 @@ def show_scoreboard():
             console.print("[bold red]No scores available.[/bold red]")
         else:
             # Sort the records by score in descending order and get the top 5
-            sorted_records = sorted(records, key=lambda x: int(x['Score']), reverse=True)[:5]
+            sorted_records = sorted(records,
+                                    key=lambda x: int(x['Score']),
+                                    reverse=True)[:5]
             for record in sorted_records:
                 console.print(
                     f"[bold cyan]{record['Name']}[/bold cyan]: "
