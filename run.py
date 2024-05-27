@@ -348,19 +348,28 @@ def main():
                     else 0
                     )
 
-            add_score_to_scoreboard(player_name, score)
-            console.print(f"[bold blue]Your score: {score}[/bold blue]")
-        next_action = get_yes_no_input("Do you want to play again? "
-                                       "(yes to play, no to see "
-                                       "the scoreboard "
-                                       "and then exit): ")
+                add_score_to_scoreboard(player_name, score)
+                console.print(f"[bold blue]Your score: {score}[/bold blue]")
 
-        if next_action == 'no':
-            clear_terminal()
-            show_scoreboard()
-            console.print("[bold yellow]Thanks for playing! "
-                          " Goodbye![/bold yellow]")
-            break
+                # Ask if the player wants to see the scoreboard or play again
+                next_action = get_play_scoreboard_input("Do you want to play again or see the scoreboard? (play/scoreboard): ")
+
+                if next_action == 'scoreboard':
+                    clear_terminal()
+                    show_scoreboard()
+                    # After showing the scoreboard, ask if they want to play again or quit
+                    play_again = get_yes_no_input("Do you want to play again? (yes to play, no to quit): ")
+                    if play_again == 'no':
+                        clear_terminal()
+                        console.print("[bold yellow]Thanks for playing! Goodbye![/bold yellow]")
+                        return
+                    elif play_again == 'yes':
+                        clear_terminal()
+                        break
+
+                elif next_action == 'play':
+                    clear_terminal()
+                    break
 
 
 if __name__ == "__main__":
