@@ -273,16 +273,22 @@ def main():
     clear_terminal()
     print_welcome_text()
 
-    show_rules = get_yes_no_input("Would you like to see "
-                                  "the rules first? (yes/no): ")
+    show_rules = get_yes_no_input("[bold white]Would you like to see "
+                                  "the rules first? (yes/no):[/bold white] ")
     if show_rules == 'yes':
         clear_terminal()
         print_rules()
         print_hangman_logo()
 
     while True:
-        start_game = get_yes_no_input("Are you ready to "
-                                      "start the game? (yes/no): ")
+        start_game = get_yes_no_input("[bold white]Ready to play? "
+                                      "(yes/no): [/bold white] ")
+        if start_game == 'no':
+            console.print("[bold yellow]Maybe next time!\n"
+                          "If you regret your decision,"
+                          " just run the program again :) [/bold yellow]")
+            break
+
         if start_game == 'yes':
             clear_terminal()
             word = choose_word()
