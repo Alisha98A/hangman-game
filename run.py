@@ -284,6 +284,7 @@ def main():
         start_game = get_yes_no_input("[bold white]Ready to play? "
                                       "(yes/no): [/bold white] ")
         if start_game == 'no':
+            clear_terminal()
             console.print("[bold yellow]Maybe next time!\n"
                           "If you regret your decision,"
                           " just run the program again :) [/bold yellow]")
