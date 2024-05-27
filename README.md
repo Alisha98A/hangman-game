@@ -244,7 +244,10 @@ Import random is also implemented on the welcome messages, so every time user ru
 #### from rich.console import Console
 - Python package for rendering rich text and beautiful formatting. Used to make the content more clear by highlighting what is important and adding colors to different parts of the text. Benefits for the user is that it is very easy to understand. For example by adding red color to incorrect answers, it immediately tells the user that something is wrong. And by adding green color to correct answers, it tells the user that something is good/right since the color is connected to that kind of feeling. Colors can evoke feelings and emotions for the user and since it is a game, using rich package is a good way to make UI experience more appealing.
 
-Each of these imports brings unique capabilities to The Hangman Game, enabling it to work with Google Sheets, authenticate with Google services, generate ASCII art, introduce randomness, enhance console output, and interact with the operating system.
+Each of these imports brings unique capabilities to The Hangman Game, enabling it to work with Google Sheets, authenticate with Google services, generate ASCII art, introduce randomness, enhance console output, and interact with the operating system. 
+
+To install use: ```pip install -name of package-```
+To generate a list of installed Python packages use:  ```pip freeze```
 
 
 ### General features 
@@ -269,53 +272,211 @@ I provided this function for the users to make the game competitive and addictiv
 
 - In the future I would like to implement degrees of difficulties by either choosing harder words to quess or reducing the chances to win. This feature will attract all kinds of players, both people who would like to have it easy and for people who like challenges.
 
+---
 
 ### Accessibility
 As of now, the Hangman Game application lacks a thorough assessment regarding accessibility features such as compatibility with screen readers, color contrast, and keyboard navigation, which are essential for individuals with disabilities. Acknowledging the significance of inclusivity, I am dedicated to enhancing these areas in forthcoming projects to ensure the application is accessible to everyone. However, I have tried using clear, concise descriptions for menu options and providing feedback in a consistent manner, which support accessibility
 
+*<span style="color: blue;">[Back to Content](#content)</span>*
+
 ## Technologies Used
 
-👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
+* [Visual Studio Code](https://code.visualstudio.com/): A powerful IDE that supports Python development well, offering debugging tools, extensions for Python, and integrated Git control. While Gitpod provides its own web-based VS Code editor, one might use the desktop version for local development or when offline.
+* [Code Institute Python Linter](https://pep8ci.herokuapp.com/): A tool to check Python code against some of the style conventions in [PEP8](https://peps.python.org/pep-0008/).
+* [Lucid App]([https://lucid.app/](https://lucid.app/documents#/documents?folder_id=recent)): Useful for planning the application's architecture and flowcharts, especially helpful in the design phase to visualize the application flow.
+* [Git](https://git-scm.com) used for version control. (```git add```, ```git commit```, ```git push```)
+* [GitHub](https://github.com) Essential for version control, allowing you to track changes, collaborate with others (if applicable), and secure online code storage.
+* [Heroku](https://www.heroku.com): A platform for deploying and hosting web applications. 
+* [Markup Validation Service](https://validator.w3.org/) - Used to check code ensuring that my HTML is error-free and adheres to the latest web standards.
+* [PEP8](https://peps.python.org/pep-0008/): Style Guide for Python Code.
+
+
+
+---
 
 ### Languages Used
 
-Make a note here of all the languages used in creating your project. For the first project this will most likely just be HTML & CSS.
+I have used [Python](https://www.python.org/) for this project.
 
-### Frameworks, Libraries & Programs Used
 
-Add any frameworks, libraries or programs used while creating your project.
+*<span style="color: blue;">[Back to Content](#content)</span>*
 
-Make sure to include things like git, GitHub, the program used to make your wireframes, any programs used to compress your images, did you use a CSS framework like Bootstrap? If so add it here (add the version used).
+---
 
-A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
+## Functions & Error Handling
+
+### Functions
+
+#### (clear_terminal):
+Clears the terminal screen to prepare for new content, improving readability during the game. Used a lot to clear the terminal after user inputs. 
+
+#### (print_welcome_text):
+Generates and displays a welcome message using ASCII art created by pyfiglet, enhancing the game's atmosphere.
+
+#### (print_hangman_logo): 
+Prints the hangman logo to the console, visually representing the game's theme.
+
+#### (print_rules):
+Shows the rules of the hangman game to the user, informing them about how to play.
+
+#### (choose_word): 
+Selects a random word from a predefined list for the game.
+
+#### (display_word): 
+Reveals the current state of the word, showing guessed letters and underscores for unguessed letters.
+
+#### (hangman_stages):
+A list of ASCII art representations of the hangman at different stages of the game, updated based on the number of incorrect guesses.
+
+#### (print_hangman):
+Displays the current stage of the hangman based on the number of incorrect guesses.
+
+#### (get_yes_no_input): 
+Prompts the user for binary responses (yes/no), validating the input to ensure it matches expected values.
+
+#### (add_score_to_scoreboard):
+Updates the Google Sheets scoreboard with the player's name and score, including error handling for potential issues with reading/writing to the sheet.
+
+#### (show_scoreboard): 
+Retrieves and displays the top scores from the Google Sheets scoreboard, with error handling for cases where the scoreboard cannot be accessed.
+
+#### (get_play_scoreboard_input): 
+Asks the user if they wish to play another round or view the scoreboard, validating the input accordingly.
+
+#### (validate_name):
+Ensures the player's name meets certain criteria (length and character type).
+
+### Error Handling
+
+Throughout the code, error handling is implemented primarily through try-except blocks. These blocks catch exceptions that may occur during operations such as interacting with Google Sheets (add_score_to_scoreboard, show_scoreboard) or processing user input (get_yes_no_input, get_play_scoreboard_input). When an exception is caught, an error message is printed to the console, informing the user of the issue.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
 
 ## Deployment & Local Development
 
-👩🏻‍💻 View an example of a completed Deployment & Local Development section [here](https://github.com/kera-cudmore/TheQuizArms#Deployment)
-
 ### Deployment
 
-Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
+### Prerequisite
 
-### Local Development
 
-The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
+* Confirm that [Python](https://www.python.org/) is set up on your computer.
+* Check if Python is installed by looking at its version. You can do this either via a terminal command or by executing a brief snippet of Python code that displays the version details.
+* To install packages and modules, opt for pip (for Python 2) or pip3 (for Python 3), based on the version of Python you're using.
+
+
+### Deploying on Heroku
+
+1. **Heroku Account:**
+   - Ensure you have a Heroku account. If you don't, sign up on the Heroku website.
+   
+2. **GitHub Repository:**
+   - Verify that your project is hosted on GitHub.
+   
+3. **Heroku Dashboard:**
+   - Log in to your Heroku account and navigate to the Heroku Dashboard.
+   
+4. **Create a New App:**
+   - On the dashboard, click `New` and choose `Create new app`.
+   
+5. **App Name:**
+   - Pick a unique name for your app.
+   
+6. **Region & Create App:**
+   - Select a region closest to you (EU or USA), then click Create App.
+   
+7. **New App**
+   - From the new app **Settings**, click **Reveal Config Vars**, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.   
+   
+8. **Confidential credentials**
+   - If you need to use any private credentials, like CREDS.JSON, add them to the Config Variables section. This step is essential for maintaining the security and integrity of your application, especially when interacting with external services or APIs that require authentication.
+   
+9. **Add Buildpack**
+   - Scroll down the page to the Buildpacks section and select **Add Buildpack**.
+   - Ensure the buildpacks are in the correct order: first, select Python, then Node.js. If they are not in this sequence, reorder them by dragging.
+
+10. **Extra files for Heroku deployment**
+Heroku requires two additional files for successful deployment:
+
+  - requirements.txt
+  - Procfile
+
+Purpose: These files specify the dependencies to be installed for your application to function correctly.
+
+Impact on Deployment: Heroku reads this file to understand which packages and versions to install in the deployment environment. Ensures consistency between local and deployed environments, reducing deployment failures and runtime errors.
+	  
+11. **requirements**
+   - To install the requirements for this project (where applicable), use the following command:
+     ```pip3 install -r requirements.txt```
+	 
+12. **Own packages**
+   - If you've installed your packages, you need to update the requirements file with:
+     ```pip3 freeze --local > requirements.txt```
+	 
+13. **Procfile**
+   - To create the Procfile, use the command below:
+     ```echo web: node index.js > Procfile```
+	 
+14. **Heroku deployment method**
+   - Following these steps to connect your frontend terminal and deploy your application to Heroku!  
+   a. Connect to Heroku:
+      Open your Terminal/CLI and log in to Heroku with: ```heroku login -i```
+	  
+   b. Set Heroku Remote:
+      Configure the Heroku remote using: ```heroku git:remote -a app_name``` (substitute app_name with the name of your app)
+	  
+   c. Git Operations:
+      Execute the usual Git commands: ```add```, ```commit```, and ```push``` to update your repository on GitHub.
+	  
+   d. Deploy to Heroku:
+      To deploy, enter: ```git push heroku main``` in the terminal.
+	  
+   - Alternatively:
+You can opt for Automatic Deployment directly from the Heroku app interface.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*   
+
+### Local Deployment
+
+The project can be cloned or forked to make a local copy on your system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+- ```pip3 install -r requirements.txt```.
+
+If using any confidential credentials, such as `CREDS.json` or `env.py` data, you'll have to manually incorporate these into your new project as well.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
 
 #### How to Fork
 
-Place instructions on how to fork your project here.
+Forking the GitHub repository creates a duplicate of the original repository in your own GitHub account. This allows you to explore and modify the content without affecting the original repository. To fork the repository, follow these steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JaqiKal/task-master)
+2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
 #### How to Clone
 
-Place instructions on how to clone your project here.
+To clone the project repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, [JaqiKal/task-master](https://github.com/JaqiKal/task-master)
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open Git Bash or Terminal
+5. Change the current working directory to the location you want to use for the cloned directory.
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/JaqiKal/task-master`
+7. Press Enter to create your local clone.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
 
 ## Testing
 
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
+Please refer to the file [TESTING.md](TESTING.md) for all tests performed.
 
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
-  
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
+--- 
+
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
 
 ## Credits
 
