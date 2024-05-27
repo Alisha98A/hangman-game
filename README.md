@@ -140,29 +140,71 @@ This skeleton provides a high-level overview of how the game flows from initiali
 
 ## Design
 
-👩🏻‍💻 View an example of a completed design section [here](https://github.com/kera-cudmore/earth-day-hackathon-2022#Design)
-
 ### Colour Scheme
 
-Add all information about your colour scheme for your site here. You can explain why you choose the colours you did?
+![Color palette](https://github.com/Alisha98A/hangman-game/blob/main/docs/color_palette.png?raw=true)
 
-I like to include a palette of the colour scheme here, my favourite site for creating a colour palette is [coolors](https://coolors.co/), but there are lots of other sites that also do the same thing, like [ColorSpace](https://mycolor.space/?hex=%23F5F5F5&sub=1), [Muzli Colors](https://colors.muz.li/), [Adobe Colour Wheel](https://color.adobe.com/create/color-wheel) and [Canva](https://www.canva.com/colors/color-palette-generator/) to name a few.
+
+Colors can increase user experience by providing different colors for different purposes. The Hangman Game employs distinct colors to highlight correct and incorrect guesses which can intuitively communicate progress and prompt users to take necessary actions. Furthermore, using color to denote different game states or outcomes enhances user comprehension and engagement.
+
+### Color Usage in Hangman Game Interface
+
+#### Magenta (shade of pink/purple):
+- Purpose: Used for welcome messages and headers.
+- Explanation: Magenta is employed to grab users' attention and convey a sense of excitement and warmth as they start or interact with the game. It signifies a welcoming and inviting atmosphere, setting the tone for an enjoyable gaming experience.
+
+
+#### Yellow:
+- Purpose: Hangman logo and certain game messages.
+- Explanation: Yellow is utilized to highlight important elements such as the hangman logo and specific game messages. It adds vibrancy and draws attention to key visual elements.
+
+#### Green:
+- Purpose: Indicating correct guesses, positive feedback, and successful outcomes.
+- Explanation: Green signifies correctness, success, and positivity within the game. It's used to highlight correct guesses, provide positive feedback to the player, and indicate successful completion of the game objectives. Green color is known as something good, and will therefore provide value for the user as something positive.  
+
+
+#### Red:
+- Purpose: Indicating incorrect guesses, warnings, and game over scenarios.
+- Explanation: Red is employed to signify errors, warnings, and negative outcomes during gameplay. It's used to highlight incorrect guesses, convey warnings to the player, and indicate unsuccessful attempts or game over scenarios. Red alerts the player to critical information and emphasizes potential risks. Therefore, choosing this color is an excellent choice for these purposes. 
+
+#### Cyan (combination of green and blue color):
+- Purpose: Displaying scoreboard entries.
+- Explanation: Cyan is used to present scoreboard entries, providing a visually distinct and easily readable format for player names and scores. It enhances the visibility of scoreboard information and ensures clarity in displaying player achievements and rankings. I chose a seperate color for scoreboard entries to recognize it quickly and for enhancing the experience for the user. 
+
+
+#### Blue:
+- Purpose: Displaying player scores.
+- Explanation: Blue is employed to present player scores within the game. It provides a clear and contrasting color for displaying numerical values, ensuring that player scores are easily identifiable and distinguishable from other interface elements. Blue is another color I chose to use seperately apart from the other functions due to the same reason as the previous color. 
+
+
+#### White:
+- Purpose: Highlighting interactive prompts and instructions.
+- Explanation: White is used to draw attention to interactive prompts, instructions, and questions posed to the player. It serves as a neutral and easily readable color against the black background, ensuring clarity and comprehension of game instructions and queries.
+
+
+#### Bold Formatting:
+- Purpose: Emphasizing important text elements.
+- Explanation: Bold formatting is applied to key text elements such as headers, prompts, and feedback messages to emphasize their significance within the interface. It enhances readability and draws attention to critical information, guiding the player through various stages of the game effectively.
+  
+
 
 ### Typography
 
-If you've imported fonts to use in your project, add some information about them here. You can include information like:
+I have chosen to include ASCII art for this project and implemented it for the welcome text for different purposes
+- Visually appealing: Makes it stand out and is also very user friendly (the text is big and bold which makes it easy to read)
+- Customization: Using pyfiglet gives me the freedom to customize the appearence since I can adjust the size, color and font. I specifically used bold and magenta styles in my function because it is suitable for a welcoming text.
+- Accessibility: ASCII art is universally accessible across different platforms and devices without the need for special software or hardware. Which ensures that the message will reach a big audience without any problems.
+- Cultural Relevance: ASCII art is popular in games which is mainly the purpose of why I implemented it for the welcome text. Since Hangman Game is a game, I used ASCII art to attract users to play. 
 
-Why did you choose the font you have?
-Is this an accessibly friendly font?
-What weights have you included?
 
-I also like to include an image of the fonts chosen as a reference.
-
-[Google Fonts](https://fonts.google.com/) is a popular choice for importing fonts to use in your project, as it doesn't require you to download the fonts to use them.
+![Ascii Art](https://github.com/Alisha98A/hangman-game/blob/main/docs/ascii_art.png?raw=true)
 
 ### Imagery
 
-Use this section to explain what sort of imagery you plan to use through your site.
+I wanted to enhance the user experience by adding a relevant image in the background of the command-line application. 
+The image represents a hangman drawing which will make the playing more fun because of all the colors. The image consists of mainly green and brown, green for nature and brown for the hangman structure. Adding this image to the game immediately catches the users attention and connects the users mind to hangman game. 
+
+![Background image](https://github.com/Alisha98A/hangman-game/blob/main/docs/image_backgrund.png?raw=true)
 
 ### Wireframes
 
@@ -280,5 +322,25 @@ learned how to make the drawing stages https://www.youtube.com/watch?v=WV2zPAVRe
 https://www.vecteezy.com/vector-art/169193-gallows-illustration for the background image
 
 
+
+Credit section
+https://www.youtube.com/watch?v=earqUEBeudg helped me structure coding with flowcharts for the game
+Love Sandwiches follow along video - for setting up credentials and API for the project
+https://www.w3schools.com/python/ref_string_split.asp learned how to use split method for my words list
+ASCII art generated by 'pyfiglet'. Source from: https://pypi.org/project/art/
+defining main functions https://realpython.com/python-main-function/
+https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/ for i in range method
+https://www.youtube.com/watch?v=XwaEo4f17LU list indexing
+learned how to make the drawing stages https://www.youtube.com/watch?v=WV2zPAVRekY
+main game function https://realpython.com/python-hangman/
+hangman drawing adapted from https://www.youtube.com/watch?v=XwaEo4f17LU
+https://www.w3schools.com/python/ref_string_join.asp function to display the current word
+#https://www.youtube.com/watch?v=N_6YIClAor0 function to display the current word
+https://www.w3schools.com/python/ref_random_choice.asp choose a random word
+# Function to select a random word from the list of words
+# Code adapted from:https://www.w3schools.com/python/ref_random_choice.asp
+# Function to display the current state of the word with guessed letters https://www.w3schools.com/python/ref_string_join.asp and https://www.youtube.com/watch?v=N_6YIClAor0
+
+colour palette from [coolors](https://coolors.co/)
 
 
