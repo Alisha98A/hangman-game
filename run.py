@@ -379,6 +379,7 @@ def main():
                     player_name = console.input("Enter your name: ").strip()
                     if validate_name(player_name):
                         break
+                    clear_terminal()
 
                 score = (
                     (len(word) * 10)
