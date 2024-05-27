@@ -214,33 +214,64 @@ There are lots of different options to create your wireframes - Code Institute s
 
 Some other options include [Figma](https://www.figma.com/), [AdobeXD](https://www.adobe.com/products/xd.html), [Sketch](https://www.sketch.com/?utm_source=google&utm_medium=cpc&adgroup=uxui&device=c&matchtype=e&utm_campaign=ADDICTMOBILE_SKETCH_GAD_DG_UK_T1_ALWAYS-ON_S_TRF_PROS_BRAND&utm_term=sketch&utm_source=google&utm_medium=cpc&utm_content=TOF_BRND__generic&hsa_acc=8710913982&hsa_cam=16831089317&hsa_grp=134620695759&hsa_ad=592060065319&hsa_src=g&hsa_tgt=kwd-14921750&hsa_kw=sketch&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwr4eYBhDrARIsANPywCjRIFn93DMezYnsyE5Fic_8l8kynJtut0GYMU01TiohHjwziFtlH0gaAhteEALw_wcB) and [Mockup](https://apps.apple.com/us/app/mockup-sketch-ui-ux/id1527554407) to name just a few! Or you can even go old school and get those wireframes completed using pen and paper. Just snap an image of the completed wireframes to add the images to the README.
 
+
+
+
+
+
+
+
+
+
 ## Features
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/TheQuizArms#Features)
+### Python Imports
 
-This section can be used to explain what pages your site is made up of.
+#### import gspread and OS
+- Used to automate data for the scoreboard hosted on Google Drive. For this project it is specifically used to have a place to score the high scores. Which makes it easy for the user to access the scoreboard from anywhere and anytime. 
 
-### General features on each page
+#### from google.oauth2.service_account import Credentials
+- Used for allowing application to access Google APIs without user interaction. 
 
-If there is a feature that appears on all pages of your site, include it here. Examples of what to include would the the navigation, a footer and a favicon.
+#### import pyfiglet
+- Used to generate ASCII art from text (welcome text) which improves the layout of the game and makes the text stand out. Enhances the UI experience. 
 
-I then like to add a screenshot of each page of the site here, i use [amiresponsive](https://ui.dev/amiresponsive) which allows me to grab an image of the site as it would be displayed on mobile, tablet and desktop, this helps to show the responsiveness of the site.
+#### import random
+- Used to randomly select word to display in the game, and also to randomly select welcome messages.
+For better user experience and variation, I have chosen to randomly select the words that the user has to guess on. This function makes it more fear but also more challenging for the user, since there is no specific order for the words.
+Import random is also implemented on the welcome messages, so every time user runs the program it will display randomly selected welcome messages. This is mainly to increase the user experience and make it fun!
+
+#### from rich.console import Console
+- Python package for rendering rich text and beautiful formatting. Used to make the content more clear by highlighting what is important and adding colors to different parts of the text. Benefits for the user is that it is very easy to understand. For example by adding red color to incorrect answers, it immediately tells the user that something is wrong. And by adding green color to correct answers, it tells the user that something is good/right since the color is connected to that kind of feeling. Colors can evoke feelings and emotions for the user and since it is a game, using rich package is a good way to make UI experience more appealing.
+
+Each of these imports brings unique capabilities to The Hangman Game, enabling it to work with Google Sheets, authenticate with Google services, generate ASCII art, introduce randomness, enhance console output, and interact with the operating system.
+
+
+### General features 
+
+#### Background image
+The background image is added to improve the design and layout for the game. 
+Since it is a command line application, the image had to be downloaded as an SVG since Heroku does not handle static files. I added a div in the HTML elements and finished with some styling rules to the SVG code, in order for the image to fit on Heroku. Adding a image representing hangman game improves visibility and makes the game more fun and exciting. 
+![Background image feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/background_feature.png?raw=true)
+
+#### Words for the game
+Words that user gets to guess are already provided as a feature. For their convenience, the words are selected randomly at every game so the user can just sit back, relax and play without having to come up with their own words. 
+
+![Words feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/words_feature.png?raw=true)
+
+#### High Score Table List
+I provided this function for the users to make the game competitive and addictive. Having a scoreboard with the top 5 scores globally will give the user a desire to keep playing to get on the scoreboard. Having the ability to add a username on the scoreboard will also increase the user experience since it is something personal, and people tend to like recognition. 
+
+![Scoreboard feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/scoreboard.png?raw=true)
+
 
 ### Future Implementations
 
-What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
+- In the future I would like to implement degrees of difficulties by either choosing harder words to quess or reducing the chances to win. This feature will attract all kinds of players, both people who would like to have it easy and for people who like challenges.
+
 
 ### Accessibility
-
-Be an amazing developer and get used to thinking about accessibility in all of your projects!
-
-This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
-
-Have you used icons and added aria-labels to enable screen readers to understand these?
-Have you ensured your site meets the minimum contrast requirements?
-Have you chosen fonts that are dyslexia/accessible friendly?
-
-Code Institute have an amazing channel for all things accessibility (a11y-accessibility) I would highly recommend joining this channel as it contains a wealth of information about accessibility and what we can do as developers to be more inclusive.
+As of now, the Hangman Game application lacks a thorough assessment regarding accessibility features such as compatibility with screen readers, color contrast, and keyboard navigation, which are essential for individuals with disabilities. Acknowledging the significance of inclusivity, I am dedicated to enhancing these areas in forthcoming projects to ensure the application is accessible to everyone. However, I have tried using clear, concise descriptions for menu options and providing feedback in a consistent manner, which support accessibility
 
 ## Technologies Used
 
