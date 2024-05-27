@@ -292,6 +292,18 @@ def get_play_scoreboard_input(prompt):
         console.print("[bold red]Invalid input.Please enter "
                       "'play' or 'scoreboard'.[/bold red]")
 
+def validate_name(name):
+    """
+    Validate the player's name.
+    The name must be between 3 and 20 characters long and can only contain letters and numbers.
+    """
+    if not (3 <= len(name) <= 20):
+        console.print("[bold red]Username must be between 3 and 20 characters long.[/bold red]")
+        return False
+    if not name.isalnum():
+        console.print("[bold red]Name can only contain letters and numbers.[/bold red]")
+        return False
+    return True
 
 # Main function to run the game
 # Code inspired by: https://realpython.com/python-hangman/
@@ -358,11 +370,16 @@ def main():
                     print_hangman(0)
 
                 # Ask for player's name and save the score
-                player_name = console.input("Enter your name: ").strip()
+                while True:
+                    player_name = console.input("Enter your name: ").strip()
+                    clear_terminal()
+                    if validate_name(player_name):
+                        break
+
                 score = (
-                 (len(word) * 10)
-                 if all(letter in guessed_letters for letter in word)
-                 else 0
+                    (len(word) * 10)
+                    if all(letter in guessed_letters for letter in word)
+                    else 0
                 )
 
                 add_score_to_scoreboard(player_name, score)
@@ -393,7 +410,6 @@ def main():
                 elif next_action == 'play':
                     clear_terminal()
                     break
-
 
 if __name__ == "__main__":
     main()
