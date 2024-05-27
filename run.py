@@ -308,42 +308,45 @@ def main():
                 while attempts > 0:
                     display_word(word, guessed_letters)
                     guess = console.input("Enter a letter: ").strip().upper()
-                if not guess.isalpha() or len(guess) != 1:
-                    console.print("[bold red]Invalid input. "
-                                  "Please enter a single letter.[/bold red]")
-                    continue
-                clear_terminal()
-                if guess in guessed_letters:
-                    console.print("[bold yellow]You already guessed "
-                                  "that letter.[/bold yellow]")
-                elif guess in word:
-                    clear_terminal()
-                    guessed_letters.append(guess)
-                    console.print(f"[bold green]Good guess! '{guess}' "
-                                  f"is in the word.[/bold green]")
-                else:
-                    attempts -= 1
-                    guessed_letters.append(guess)
-                    console.print(f"[bold red]You answered '{guess}'"
-                                  f" which was incorrect. You have "
-                                  f"{attempts} attempts left.[/bold red]")
-                    print_hangman(attempts)
-                if all(letter in guessed_letters for letter in word):
-                    clear_terminal()
-                    display_word(word, guessed_letters)
-                    console.print(f"[bold green]Congratulations! You guessed"
-                                  f" the word '{word}'![/bold green]")
-                    break
-            else:
-                clear_terminal()
-                console.print(f"[bold red]Game over! The word was "
-                              f"'{word}'.[/bold red]")
-                print_hangman(0)
-            # Ask for player's name and save the score
-            player_name = console.input("Enter your name: ").strip()
-            score = (len(word) * 10) \
-                if all(letter in guessed_letters for letter in word) \
-                else 0
+                        if not guess.isalpha() or len(guess) != 1:
+                            console.print("[bold red]Invalid input. "
+                                        "Please enter a single letter."
+                                        "[/bold red]")
+                            continue
+                        clear_terminal()
+                        if guess in guessed_letters:
+                            console.print("[bold yellow]You already guessed"
+                                        " that letter.[/bold yellow]")
+                        elif guess in word:
+                            guessed_letters.append(guess)
+                            console.print(f"[bold green]Good guess! '{guess}' is"
+                                        f" in the word.[/bold green]")
+                        else:
+                            attempts -= 1
+                            guessed_letters.append(guess)
+                            console.print(f"[bold red]You answered '{guess}' which"
+                                        f" was incorrect. You have {attempts}"
+                                        f" attempts left.[/bold red]")
+                            print_hangman(attempts)
+                        if all(letter in guessed_letters for letter in word):
+                            clear_terminal()
+                            display_word(word, guessed_letters)
+                            console.print(f"[bold green]Congratulations! You "
+                                        f"guessed the word '{word}'!"
+                                        f"[/bold green]")
+                            break
+                    else:
+                        clear_terminal()
+                        console.print(f"[bold red]Game over! The word was "
+                                    f"'{word}'.[/bold red]")
+                        print_hangman(0)
+                    # Ask for player's name and save the score
+                    player_name = console.input("Enter your name: ").strip()
+                    score = (
+                    (len(word) * 10)
+                    if all(letter in guessed_letters for letter in word)
+                    else 0
+                    )
 
             add_score_to_scoreboard(player_name, score)
             console.print(f"[bold blue]Your score: {score}[/bold blue]")
