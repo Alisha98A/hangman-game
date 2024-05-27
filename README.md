@@ -8,12 +8,10 @@ But why have I developed this game? Well, it's all about making learning fun. I 
 
 Whether you're looking for a short break from reality or want to sharpen your cognitive skills, our Hangman game offers both entertainment and educational value. Dive in, have fun, and let's see if you can crack the code before the hangman strikes. I wish you best of luck!
 
+![Mockup Image](https://github.com/Alisha98A/hangman-game/blob/main/docs/mockup.png?raw=true) 
 
-Add an image of the finished site here. [amiresponsive](https://ui.dev/amiresponsive) to get an image of my site on all device sizes, and amiresponsive allows you to click links on the page and scroll, so each device can show a different element of your site.
+Visit the deployed application at [Heroku](https://hangman-game-application-b874e04acb8e.herokuapp.com/)
 
-Add a link to the live site here, for Milestone 1 this will be the GitHub Pages Link from when you deployed the site.
-
-If you want to add optional [shields.io](https://shields.io) badges to your README, I like to add them to this section.
 
 ---
 
@@ -55,11 +53,90 @@ If you want to add optional [shields.io](https://shields.io) badges to your READ
 
 ## User Experience (UX)
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/Bully-Book-Club#user-experience-ux)
+### The Strategy
+
+The primary goal of the Hangman game is to engage users in a challenging yet entertaining activity that tests their vocabulary and problem-solving skills. The game aims to provide a simple, interactive experience that can be enjoyed repeatedly, with the possibility of competing against others through a global leaderboard stored in a Google Sheet. The strategy involves:
+
+- Engagement: Keeping players engaged by providing clear instructions, visual aids (ASCII art), and immediate feedback on their guesses.
+- Accessibility: Ensuring the game is accessible to a wide audience by supporting both novice and experienced players through adjustable difficulty levels and hints.
+Social Interaction: Incorporating a feature to allow players to compare their scores with others, fostering a sense of competition and community.
+
+
+### The Scope
+The scope includes the following features:
+
+- Gameplay Mechanics: Implementing the core Hangman game mechanics, including guessing letters, updating the game state, and determining win/loss conditions.
+- User Interface: Designing a text-based user interface (TUI) that is intuitive and easy to navigate, including displaying the game board, hangman stages, and scoreboards.
+- Scoring System: Developing a scoring system that rewards players for correctly guessing words and penalizes them for incorrect guesses, with the option to save high scores to a - Google Sheet.
+- Leaderboard Integration: Integrating with Google Sheets to store and display player scores, allowing for competitive play and tracking progress over time.
+
+
+### The Structure
+The application's structure can be divided into several components:
+
+- Initialization: Setting up the game environment, including importing necessary libraries, initializing the Google Sheets API, and preparing the game board and hangman stages.
+- Main Game Loop: The core logic of the game, including selecting a random word, handling user guesses, updating the game state, and determining the outcome of the game.
+- Input Handling: Functions to manage user inputs, such as validating names, handling guesses, and navigating through the game menu.
+- Display Logic: Functions responsible for rendering the game state to the console, including displaying the hangman stages, the current word, and the scoreboard.
+- Scoring and Leaderboard: Functions to calculate scores, update the Google Sheet with scores, and display the leaderboard to players.
+
+
+### The Skeleton
+The skeleton of the application outlines the basic framework and flow of the game:
+This skeleton provides a high-level overview of how the game flows from initialization to the main game loop, handling user inputs, updating the display, managing scores and leaderboards, and finally finalizing the game upon completion.
+
+[here](https://github.com/kera-cudmore/Bully-Book-Club#user-experience-ux)
 
 ### User Stories
 
-Add your user stories here. You want to include first time visitors and returning visitors here as a minimum. Think about each group, and the experience and journey you want them to have on your site. It really helps to think about this before you start coding, and will really help with creating your wireframes.
+### User Story for First-Time Players
+#### User Story 1: As a first-time player, I want to learn how to play Hangman so that I can participate effectively.
+- The application should display a welcome message and instructions on how to play.
+- The player should be prompted to confirm if they wish to see the game rules before starting.
+- The rules should explain how the game works with clear instructions 1-5
+
+
+### User Story for Returning Players
+#### User Story 2: As a returning player, I would like to continue my previous game session so that I can pick up where I left off.
+- The game should prompt returning players to enter their username to retrieve their saved game state.
+- If a saved game exists, the player should be able to resume their game immediately.
+
+#### User Story 3: As a returning player, I would like to view the leaderboard to see how I rank among the other players.
+- The game should display a leaderboard fetched from Google Sheets.
+- The leaderboard should show the top scores and usernames.
+
+
+### User Story for All Players
+#### User Story 4: As a player, I want to guess letters to uncover the hidden word so that I can progress in the game.
+
+- The application should allow me to input a single letter at a time.
+- It should give me immediate feedback on whether the guessed letter is in the word or not.
+- If the letter is incorrect, the application should reduce the number of attempts and display the corresponding hangman stage.
+
+#### User Story 5: As a player, I want to see the current state of the word as I guess letters so that I can track my progress.
+
+- The application should reveal the guessed letters in the word, with underlines replaced by guessed letters.
+
+#### User Story 6: As a player, I want to know when I have won or lost the game so that I can track the result.
+
+- The application should announce victory if I guess the word correctly within the allowed attempts.
+- It should announce a loss if I have exhausted all attempts without guessing the word.
+
+#### User Story 7: As a player, I want to see my score and potentially add it to a leaderboard so that I can compete against myself and others.
+
+- The application should calculate my score based on the game's difficulty level.
+- It should provide an option to display the global leaderboard stored in Google Sheets.
+- Upon my request, my score should be added to the leaderboard.
+
+#### User Story 8: As a player, I want to decide whether to play another round or view the leaderboard so that I can continue engaging with the game.
+
+- After each game, the application should prompt me to choose between playing again or viewing the scoreboard.
+
+#### User Story 9: As a player, I want to enter my name to be associated with my score so that my achievements are recognized.
+
+- The application should prompt me to enter my name before finalizing my score.
+- It should validate my name according to predefined criteria (length, alphanumeric characters).
+
 
 ## Design
 
