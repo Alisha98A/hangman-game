@@ -300,13 +300,14 @@ def main():
             break
 
         if start_game == 'yes':
-            clear_terminal()
-            word = choose_word()
-            guessed_letters = []
-            attempts = 6
-            while attempts > 0:
-                display_word(word, guessed_letters)
-                guess = console.input("Enter a letter: ").strip().upper()
+            while True:
+                clear_terminal()
+                word = choose_word()
+                guessed_letters = []
+                attempts = 6
+                while attempts > 0:
+                    display_word(word, guessed_letters)
+                    guess = console.input("Enter a letter: ").strip().upper()
                 if not guess.isalpha() or len(guess) != 1:
                     console.print("[bold red]Invalid input. "
                                   "Please enter a single letter.[/bold red]")
