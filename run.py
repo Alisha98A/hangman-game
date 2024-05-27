@@ -224,6 +224,15 @@ def print_hangman(attempts):
     console.print(hangman_stages[6 - attempts], style="bold red")
 
 
+def get_yes_no_input(prompt):
+    while True:
+        response = console.input(prompt).strip().lower()
+        if response in ['yes', 'no']:
+            return response
+        console.print("[bold red]Invalid input. "
+                      "Please enter 'yes' or 'no'.[/bold red]")
+
+
 def add_score_to_scoreboard(name, score):
     """
     Add user name and score to the Google Sheets scoreboard.
@@ -258,13 +267,13 @@ def show_scoreboard():
         console.print(f"[bold red]Error retrieving scoreboard: {e}[/bold red]")
 
 
-def get_yes_no_input(prompt):
+def get_play_scoreboard_input(prompt):
     while True:
         response = console.input(prompt).strip().lower()
-        if response in ['yes', 'no']:
+        if response in ['play', 'scoreboard']:
             return response
-        console.print("[bold red]Invalid input. "
-                      "Please enter 'yes' or 'no'.[/bold red]")
+        console.print("[bold red]Invalid input.Please enter "
+                      "'play' or 'scoreboard'.[/bold red]")
 
 
 # Main function to run the game
