@@ -238,7 +238,18 @@ def add_score_to_scoreboard(name, score):
     Add user name and score to the Google Sheets scoreboard.
     """
     try:
-        scoreboard.append_row([name, score])
+        records = scoreboard.get_all_records()
+        if not records:
+            scoreboard.append_row([name, score])
+        else:
+            sorted_records = sorted(records, key=lambda x: int(x['Score']), reverse=True)[:5]
+            lowest_top_score = min(int(record['Score']) for record in sorted_records)
+            if score >= lowest_top_score:
+                console.print(f"[bold green]Congratulations, {name} You did it your way to the scoreboard![/bold green]")
+            else:
+                console.print(f"[bold red]Sorry, {name}. You did not make the scoreboard.[/bold red]")
+                return
+            scoreboard.append_row([name, score])
     except Exception as e:
         console.print(f"[bold red]Error adding score: {e}[/bold red]")
 
