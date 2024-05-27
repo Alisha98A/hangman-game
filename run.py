@@ -45,7 +45,7 @@ shareholder mail personality polish cereal storm illusion
 """.split()
 
 
-# Different welcome messages
+# Collection of welcome messages for the game
 welcome_messages = [
     "Welcome to Hangman Game!", "Hello there! Ready for some Hangman fun?",
     "Greetings! Let's play Hangman!", "Hi! Ready for a game of Hangman?"
@@ -71,7 +71,7 @@ def print_welcome_text():
     console.print(ascii_art, style="bold magenta")
 
 
-# Function to print hangman logo
+# Function to display hangman logo
 # Code adapted from:
 # https://realpython.com/python-main-function/
 def print_hangman_logo():
@@ -90,7 +90,7 @@ def print_hangman_logo():
     console.print(hangman_logo, style="bold yellow")
 
 
-# Function to print the rules of the game
+# Function to display the rules of the hangman game
 def print_rules():
     rules = """
     [bold]Rules of Hangman:[/bold]
@@ -106,17 +106,19 @@ def print_rules():
     console.print(rules)
 
 
-# Function to choose a random word from the list
-# Code adapted from:
-# https://www.w3schools.com/python/ref_random_choice.asp
+# Function to select a random word from the list of words
 def choose_word():
+    """
+    Returns a randomly chosen word from the list of words.
+    """
     return random.choice(words).upper()
 
 
 # Function to display the current state of the word with guessed letters
-# https://www.w3schools.com/python/ref_string_join.asp
-# https://www.youtube.com/watch?v=N_6YIClAor0
 def display_word(word, guessed_letters):
+    """
+    Displays the current state of the word with guessed letters filled in.
+    """
     displayed_word = ''.join([
         letter if letter in guessed_letters else '_'
         for letter in word
@@ -124,7 +126,7 @@ def display_word(word, guessed_letters):
     console.print(f"Word: [bold green]{displayed_word}[/bold green]")
 
 
-# List of hangman drawings for each stage
+# List of hangman drawings for each stage of the game
 # Drawings inspired by:
 # https://www.youtube.com/watch?v=WV2zPAVRekY
 hangman_stages = [
@@ -221,6 +223,7 @@ def print_hangman(attempts):
     console.print(hangman_stages[6 - attempts], style="bold red")
 
 
+# Function to handle yes/no inputs
 def get_yes_no_input(prompt):
     while True:
         response = console.input(prompt).strip().lower()
@@ -230,6 +233,7 @@ def get_yes_no_input(prompt):
                       "Please enter 'yes' or 'no'.[/bold red]")
 
 
+# Function to update the scoreboard with the player's score
 def add_score_to_scoreboard(name, score):
     """
     Add user name and score to the Google Sheets scoreboard.
@@ -256,6 +260,7 @@ def add_score_to_scoreboard(name, score):
         console.print(f"[bold red]Error adding score: {e}[/bold red]")
 
 
+# Function to display the scoreboard from the Google Sheet
 def show_scoreboard():
     console.print("[bold magenta]Scoreboard:[/bold magenta]")
     try:
@@ -284,6 +289,7 @@ def show_scoreboard():
         console.print(f"[bold red]Error retrieving scoreboard: {e}[/bold red]")
 
 
+# Function to prompt the user to either play again or view the scoreboard
 def get_play_scoreboard_input(prompt):
     while True:
         response = console.input(prompt).strip().lower()
@@ -293,6 +299,7 @@ def get_play_scoreboard_input(prompt):
                       "'play' or 'scoreboard'.[/bold red]")
 
 
+# Function to validate the player's name
 def validate_name(name):
     """
     Validate the player's name.
@@ -310,22 +317,33 @@ def validate_name(name):
     return True
 
 
-# Main function to run the game
+# Main function to run the hangman game
 # Code inspired by: https://realpython.com/python-hangman/
 def main():
+    """
+    Coordinates the flow of the hangman game,
+    including setup, gameplay, and scoring.
+    """
     clear_terminal()
     print_welcome_text()
 
+# Prompt the user to see the game rules
     show_rules = get_yes_no_input("[bold white]Would you like to see "
                                   "the rules first? (yes/no):[/bold white] ")
     if show_rules == 'yes':
+        # Clear the terminal and display the rules
         clear_terminal()
         print_rules()
+        # Display the hangman logo after displaying the rules
         print_hangman_logo()
 
+    # Main game loop
     while True:
+        # Ask the user if they're ready to play
         start_game = get_yes_no_input("[bold white]Ready to play? "
                                       "(yes/no): [/bold white] ")
+
+        # Exit the game if the user decides not to play
         if start_game == 'no':
             clear_terminal()
             console.print("[bold yellow]Maybe next time!\n"
@@ -333,27 +351,40 @@ def main():
                           " just run the program again :) [/bold yellow]")
             break
 
+        # Start a new game if the user decides to play
         if start_game == 'yes':
             while True:
                 clear_terminal()
+                # Choose a random word for the game
                 word = choose_word()
                 guessed_letters = []
                 attempts = 6
+
+                # Game loop where the user guesses letters
                 while attempts > 0:
+                    # Display the current state of the word
                     display_word(word, guessed_letters)
+
+                    # Get the user's guess
                     guess = console.input("Enter a letter: ").strip().upper()
+
+                    # Validate the guess
                     if not guess.isalpha() or len(guess) != 1:
                         console.print("[bold red]Invalid input. Please enter "
                                       "a single letter.[/bold red]")
                         continue
+
+                    # Check if the guess is correct
                     clear_terminal()
                     if guess in guessed_letters:
                         console.print("[bold yellow]You already guessed "
                                       "that letter.[/bold yellow]")
+
                     elif guess in word:
                         guessed_letters.append(guess)
                         console.print(f"[bold green]Good guess! '{guess}' "
                                       f"is in the word.[/bold green]")
+
                     else:
                         attempts -= 1
                         guessed_letters.append(guess)
@@ -361,6 +392,8 @@ def main():
                                       f" was incorrect. You have {attempts}"
                                       f" attempts left.[/bold red]")
                         print_hangman(attempts)
+
+                    # Check if the game is won
                     if all(letter in guessed_letters for letter in word):
                         clear_terminal()
                         display_word(word, guessed_letters)
@@ -369,6 +402,7 @@ def main():
                                       f"[/bold green]")
                         break
                 else:
+                    # Handle the case where the game is lost
                     clear_terminal()
                     console.print(f"[bold red]Game over! The word was "
                                   f" '{word}'.[/bold red]")
@@ -377,16 +411,17 @@ def main():
                 # Ask for player's name and save the score
                 while True:
                     player_name = console.input("Enter your name: ").strip()
+                    clear_terminal()
                     if validate_name(player_name):
                         break
-                    clear_terminal()
 
+                # Calculate the score based on the game result
                 score = (
                     (len(word) * 10)
                     if all(letter in guessed_letters for letter in word)
                     else 0
                 )
-
+                # Update the scoreboard with the player's score
                 add_score_to_scoreboard(player_name, score)
                 console.print(f"[bold blue]Your score: {score}[/bold blue]")
 
@@ -400,7 +435,7 @@ def main():
                     clear_terminal()
                     show_scoreboard()
                     # After showing the scoreboard:
-                    # ask if they want to play again or quit
+                    # Ask if they want to play again or quit
                     play_again = get_yes_no_input("Do you want to play again? "
                                                   "(yes to play, no to quit):")
                     if play_again == 'no':
@@ -417,5 +452,6 @@ def main():
                     break
 
 
+# Execute the main function if this script is being run directly
 if __name__ == "__main__":
     main()
