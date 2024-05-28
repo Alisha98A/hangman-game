@@ -24,20 +24,20 @@ Visit the deployed application at [Heroku](https://hangman-game-application-b874
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
   * [Imagery](#imagery)
-  * [Wireframes](#wireframes)
+  * [Flowcharts(#flowcharts)
 
 * [Features](#features)
-  * [General Features on Each Page](#general-features-on-each-page)
+  * [General Features on Each Page](#general-features)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
-  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+
 
 * [Deployment & Local Development](#deployment--local-development)
   * [Deployment](#deployment)
-  * [Local Development](#local-development)
+  * [Local Deployment](#local-deployment)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
 
@@ -85,7 +85,7 @@ The application's structure can be divided into several components:
 The skeleton of the application outlines the basic framework and flow of the game:
 This skeleton provides a high-level overview of how the game flows from initialization to the main game loop, handling user inputs, updating the display, managing scores and leaderboards, and finally finalizing the game upon completion.
 
-[here](https://github.com/kera-cudmore/Bully-Book-Club#user-experience-ux)
+---
 
 ### User Stories
 
@@ -132,6 +132,7 @@ This skeleton provides a high-level overview of how the game flows from initiali
 - The application should prompt me to enter my name before finalizing my score.
 - It should validate my name according to predefined criteria (length, alphanumeric characters).
 
+---
 
 ## Design
 
@@ -181,7 +182,7 @@ Colors can increase user experience by providing different colors for different 
 - Purpose: Emphasizing important text elements.
 - Explanation: Bold formatting is applied to key text elements such as headers, prompts, and feedback messages to emphasize their significance within the interface. It enhances readability and draws attention to critical information, guiding the player through various stages of the game effectively.
   
-
+---
 
 ### Typography
 
@@ -194,6 +195,8 @@ I have chosen to include ASCII art for this project and implemented it for the w
 
 ![Ascii Art](https://github.com/Alisha98A/hangman-game/blob/main/docs/ascii_art.png?raw=true)
 
+---
+
 ### Imagery
 
 I wanted to enhance the user experience by adding a relevant image in the background of the command-line application. 
@@ -201,13 +204,9 @@ The image represents a hangman drawing which will make the playing more fun beca
 
 ![Background image](https://github.com/Alisha98A/hangman-game/blob/main/docs/image_backgrund.png?raw=true)
 
-### Wireframes
+---
 
-Add the images or links for your wireframes here.
-
-There are lots of different options to create your wireframes - Code Institute students can access [Balsamiq](https://balsamiq.com/) as part of the course.
-
-Some other options include [Figma](https://www.figma.com/), [AdobeXD](https://www.adobe.com/products/xd.html), [Sketch](https://www.sketch.com/?utm_source=google&utm_medium=cpc&adgroup=uxui&device=c&matchtype=e&utm_campaign=ADDICTMOBILE_SKETCH_GAD_DG_UK_T1_ALWAYS-ON_S_TRF_PROS_BRAND&utm_term=sketch&utm_source=google&utm_medium=cpc&utm_content=TOF_BRND__generic&hsa_acc=8710913982&hsa_cam=16831089317&hsa_grp=134620695759&hsa_ad=592060065319&hsa_src=g&hsa_tgt=kwd-14921750&hsa_kw=sketch&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwr4eYBhDrARIsANPywCjRIFn93DMezYnsyE5Fic_8l8kynJtut0GYMU01TiohHjwziFtlH0gaAhteEALw_wcB) and [Mockup](https://apps.apple.com/us/app/mockup-sketch-ui-ux/id1527554407) to name just a few! Or you can even go old school and get those wireframes completed using pen and paper. Just snap an image of the completed wireframes to add the images to the README.
+### Flowcharts
 
 
 
@@ -217,6 +216,10 @@ Some other options include [Figma](https://www.figma.com/), [AdobeXD](https://ww
 
 
 
+
+
+
+---
 
 ## Features
 
@@ -244,6 +247,7 @@ Each of these imports brings unique capabilities to The Hangman Game, enabling i
 To install use: ```pip install -name of package-```
 To generate a list of installed Python packages use:  ```pip freeze```
 
+---
 
 ### General features 
 
@@ -262,10 +266,11 @@ I provided this function for the users to make the game competitive and addictiv
 
 ![Scoreboard feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/scoreboard.png?raw=true)
 
+---
 
 ### Future Implementations
 
-- In the future I would like to implement degrees of difficulties by either choosing harder words to quess or reducing the chances to win. This feature will attract all kinds of players, both people who would like to have it easy and for people who like challenges.
+- In the future I would like to implement degrees of difficulties by either choosing harder words to quess or reducing the chances to win. This feature will attract all kinds of players, both for complete beginners and for people who are ready to challenge themselves more. 
 
 ---
 
@@ -273,6 +278,8 @@ I provided this function for the users to make the game competitive and addictiv
 As of now, the Hangman Game application lacks a thorough assessment regarding accessibility features such as compatibility with screen readers, color contrast, and keyboard navigation, which are essential for individuals with disabilities. Acknowledging the significance of inclusivity, I am dedicated to enhancing these areas in forthcoming projects to ensure the application is accessible to everyone. However, I have tried using clear, concise descriptions for menu options and providing feedback in a consistent manner, which support accessibility
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
+
+---
 
 ## Technologies Used
 
@@ -284,7 +291,6 @@ As of now, the Hangman Game application lacks a thorough assessment regarding ac
 * [Heroku](https://www.heroku.com): A platform for deploying and hosting web applications. 
 * [Markup Validation Service](https://validator.w3.org/) - Used to check code ensuring that my HTML is error-free and adheres to the latest web standards.
 * [PEP8](https://peps.python.org/pep-0008/): Style Guide for Python Code.
-
 
 
 ---
@@ -347,6 +353,8 @@ Throughout the code, error handling is implemented primarily through try-except 
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+---
+
 ## Deployment & Local Development
 
 ### Deployment
@@ -395,9 +403,9 @@ Heroku requires two additional files for successful deployment:
   - requirements.txt
   - Procfile
 
-Purpose: These files specify the dependencies to be installed for your application to function correctly.
-
-Impact on Deployment: Heroku reads this file to understand which packages and versions to install in the deployment environment. Ensures consistency between local and deployed environments, reducing deployment failures and runtime errors.
+     Purpose: These files specify the dependencies to be installed for your application to function correctly.
+     Impact on Deployment: Heroku reads this file to understand which packages and versions to install in the deployment environment. 
+     Ensures consistency between local and deployed environments, reducing deployment failures and runtime errors.
 	  
 11. **requirements**
    - To install the requirements for this project (where applicable), use the following command:
@@ -412,7 +420,9 @@ Impact on Deployment: Heroku reads this file to understand which packages and ve
      ```echo web: node index.js > Procfile```
 	 
 14. **Heroku deployment method**
-   - Following these steps to connect your frontend terminal and deploy your application to Heroku!  
+   - Following these steps to connect your frontend terminal and deploy your application to Heroku!
+
+
    a. Connect to Heroku:
       Open your Terminal/CLI and log in to Heroku with: ```heroku login -i```
 	  
@@ -430,6 +440,8 @@ You can opt for Automatic Deployment directly from the Heroku app interface.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*   
 
+---
+
 ### Local Deployment
 
 The project can be cloned or forked to make a local copy on your system.
@@ -441,6 +453,8 @@ If using any confidential credentials, such as `CREDS.json` or `env.py` data, yo
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+---
+
 #### How to Fork
 
 Forking the GitHub repository creates a duplicate of the original repository in your own GitHub account. This allows you to explore and modify the content without affecting the original repository. To fork the repository, follow these steps:
@@ -448,6 +462,8 @@ Forking the GitHub repository creates a duplicate of the original repository in 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JaqiKal/task-master)
 2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+---
 
 #### How to Clone
 
@@ -464,6 +480,8 @@ To clone the project repository:
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+---
+
 ## Testing
 
 Please refer to the file [TESTING.md](TESTING.md) for all tests performed.
@@ -471,10 +489,7 @@ Please refer to the file [TESTING.md](TESTING.md) for all tests performed.
 --- 
 
 
-*<span style="color: blue;">[Back to Content](#content)</span>*
-
 ## Credits
- [here](https://github.com/kera-cudmore/BookWorm#Credits)
 
 
 ### Code Used
@@ -502,10 +517,13 @@ Here's the adapted code:
 ![Code used 3](https://github.com/Alisha98A/hangman-game/blob/main/docs/code_used3.png?raw=true)
 
 
+---
 
 ###  Media
 
 The [background image](https://www.vecteezy.com/vector-art/169193-gallows-illustration) is taken from Vecteezy where I found an image of a hangman drawing with an SVG file, which I downloaded and put into html elements.
+
+---
   
 ###  Acknowledgments
 
@@ -513,7 +531,7 @@ The [background image](https://www.vecteezy.com/vector-art/169193-gallows-illust
 - Code Institute Slack Community has been a big support.
 - This project was influenced by Love Sandwiches, a code-along project from Code Institute. By trying to understand the underlying principles I have tried to adapt them to my own project. However, this might involve using similar/same intitials and setup.
 
-
+---
 
 ### Content
 - [Jenny's Lectures CS IT Youtube video](https://www.youtube.com/watch?v=earqUEBeudg) helped me structure coding with flowcharts for the game
@@ -532,4 +550,4 @@ The [background image](https://www.vecteezy.com/vector-art/169193-gallows-illust
 - Function to display the current state of the word with guessed letters [W3Schools](https://www.w3schools.com/python/ref_string_join.asp) and [Portfolio Courses youtube video](https://www.youtube.com/watch?v=N_6YIClAor0)
 - Took the color palette generator from [coolors](https://coolors.co/) (for content in README.md file)
 
-
+---
