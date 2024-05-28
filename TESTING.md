@@ -19,9 +19,9 @@ Visit the deployed application at [Heroku](https://hangman-game-application-b874
   * [Function Testing](#function-testing)
 * [DEFECTS](#defects)
   * [Unsolved issue](#unsolved-issue)
-  * [Known issue](#known-issue)
 
 - - -
+
 ## Testing overview & environment
 
 Testing was conducted continuously throughout the development phase. Utilizing the CI Python Linter tool and analyzing the terminal output during the build process allowed me to identify and resolve problems promptly. The validation procedure followed the standards set forth in PEP8. Most of the warnings were due to unnecessary or absent whitespace, along with cases of excessive backslashes and inadequate indentation. These concerns have been resolved and corrected.
@@ -242,11 +242,18 @@ Finally, after making the necessary fixes, I tested the add_score_to_scoreboard 
 - - -
 ### UNSOLVED issue
 
-Nothing unsolved
+
+Potential bug on the ASCII art was found reported by a user during testing. However, I was unable to reproduce it despite trying multiple browsers, therefore, I am unsure if it is related to the packages, or that users device specifically. Since the test user was unable to reproduce it on a different pc - I were unable to diagnose the issue any further. 
+
+Below is a image of the bug reported by a user:
+
+![Bug reported by a user](https://github.com/Alisha98A/hangman-game/blob/main/docs/ascii_error.png?raw=true)
+
+
+
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 - - -
-### KNOWN issue
-None identified
+
 *<span style="color: blue;">[Back to Content](#content)</span>*
 - - -
