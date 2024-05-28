@@ -32,7 +32,7 @@ Testing was conducted continuously throughout the development phase. Utilizing t
   * MacBook Pro (13-inch, 2017) 
 
 
-### Browser compatibility
+### Browser compatibilty
 
 * Google Chrome, version 121.0.6167.86 (Official Build) (64-bit)
 * Firefox, version 123.0 (64-bit)
@@ -55,7 +55,7 @@ RESULT: All clear, no errors found
 
 - - -
 
-## Manual test
+## Manual testing
 
 ### User Stories test
 
@@ -177,9 +177,14 @@ RESULT: All clear, no errors found
 | ITC010      | Yes/No Input Validation | The application should validate yes/no inputs for game-related prompts. | Manually tested by providing invalid inputs. | Passed | Validations worked as expected. |
 
 ### Failed  test cases
+
 None
+
 *<span style="color: blue;">[Back to Content](#content)</span>*
+
+
 ## DEFECTS
+
 ### Bug-01
 
 Error message on Game Rules list type because line is too long. 
@@ -255,5 +260,4 @@ Below is a image of the bug reported by a user:
 *<span style="color: blue;">[Back to Content](#content)</span>*
 - - -
 
-*<span style="color: blue;">[Back to Content](#content)</span>*
-- - -
+
