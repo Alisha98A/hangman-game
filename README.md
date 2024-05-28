@@ -208,15 +208,9 @@ The image represents a hangman drawing which will make the playing more fun beca
 
 ### Flowcharts
 
+To adhere to best practices, I initiated the development process by creating a flowchart for the app's logic prior to commencing coding. This was accomplished using the free version of Draw.io. It's important to note that the flowchart serves as a simplified visual representation of the Hangman Game. Although it encapsulates the fundamental operations and user interactions, certain implementation specifics and error-handling procedures have been omitted for the sake of clarity. The actual application logic might encompass further steps and validations that aren't illustrated in the flowchart.
 
-
-
-
-
-
-
-
-
+![Flowchart](https://github.com/Alisha98A/hangman-game/blob/main/docs/Flowcharts.png?raw=true)
 
 
 ---
