@@ -24,7 +24,7 @@ Visit the deployed application at [Heroku](https://hangman-game-application-b874
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
   * [Imagery](#imagery)
-  * [Flowcharts(#flowcharts)
+  * [Flowcharts](#flowcharts)
 
 * [Features](#features)
   * [General Features on Each Page](#general-features)
@@ -443,6 +443,7 @@ Heroku requires two additional files for successful deployment:
      ```echo web: node index.js > Procfile```
 	 
 14. **Heroku deployment method**
+
    - Following these steps to connect your frontend terminal and deploy your application to Heroku!
 
 
@@ -550,8 +551,9 @@ The [background image](https://www.vecteezy.com/vector-art/169193-gallows-illust
   
 ###  Acknowledgments
 
-- I would like to thank [Matt Bodden](https://github.com/MattBCoding) who really took the time to help me! So grateful to have him as my mentor!
-- Code Institute Slack Community has been a big support.
+- I would like to thank [Matt Bodden](https://github.com/MattBCoding) who really took the time to help me with this project! So grateful to have him as my mentor!
+- Thanks to [Jonathan Zakrisson](https://code-institute-room.slack.com/team/U046C0Q9XDM) on Slack who helped me with user inputs. 
+- Code Institute Slack Community overall has been a big support.
 - This project was influenced by Love Sandwiches, a code-along project from Code Institute. By trying to understand the underlying principles I have tried to adapt them to my own project. However, this might involve using similar/same intitials and setup.
 
 ---
