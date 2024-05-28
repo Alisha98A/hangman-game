@@ -483,7 +483,7 @@ If using any confidential credentials, such as `CREDS.json` or `env.py` data, yo
 
 Forking the GitHub repository creates a duplicate of the original repository in your own GitHub account. This allows you to explore and modify the content without affecting the original repository. To fork the repository, follow these steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JaqiKal/task-master)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Alisha98A/hangman-game.git)
 2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
@@ -494,15 +494,15 @@ Forking the GitHub repository creates a duplicate of the original repository in 
 To clone the project repository:
 
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, [JaqiKal/task-master](https://github.com/JaqiKal/task-master)
+2. Go to the repository for this project, [Alisha98A/hangman-game](https://github.com/Alisha98A/hangman-game.git)
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open Git Bash or Terminal
 5. Change the current working directory to the location you want to use for the cloned directory.
 6. In your IDE Terminal, type the following command to clone my repository:
-	- `git clone https://github.com/JaqiKal/task-master`
+	- `git clone https://github.com/Alisha98A/hangman-game.git`
 7. Press Enter to create your local clone.
 
-*<span style="color: blue;">[Back to Content](#content)</span>*
+
 
 ---
 
