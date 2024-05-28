@@ -334,12 +334,14 @@ def main():
         # Display the hangman logo after displaying the rules
         print_hangman_logo()
 
-    # Main game loop
-    while True:
         # Ask the user if they're ready to play
         start_game = get_yes_no_input("[bold white]Ready to play? "
                                       "(yes/no): [/bold white] ")
+    else:
+        start_game = 'yes'
 
+    # Main game loop
+    while True:
         # Exit the game if the user decides not to play
         if start_game == 'no':
             clear_terminal()
@@ -350,6 +352,7 @@ def main():
 
         # Start a new game if the user decides to play
         if start_game == 'yes':
+
             while True:
                 clear_terminal()
                 # Choose a random word for the game
