@@ -256,6 +256,9 @@ To generate a list of installed Python packages use:  ```pip freeze```
 - Hangman Game Logic: Implements the classic Hangman game mechanics, including guessing letters, updating the game state, and determining 
   win/loss conditions.
 
+  ![Correct guesses](https://github.com/Alisha98A/hangman-game/blob/main/docs/correct_answer.png?raw=true)
+  ![Incorrect guess](https://github.com/Alisha98A/hangman-game/blob/main/docs/incorrect_answer.png?raw=true)
+
 ---
 
 - Dynamic Word Selection: Words that user gets to guess are already provided as a feature. For their convenience, the words are selected randomly at every game so the user can just sit back, relax and play without having to come up with their own words.
@@ -265,12 +268,17 @@ To generate a list of installed Python packages use:  ```pip freeze```
 ---
   
 - Interactive Terminal Interface: Provides a rich, interactive experience through the rich library, including colored output, ASCII art, and custom console commands.
+- 
+![Rich](https://github.com/Alisha98A/hangman-game/blob/main/docs/rich.png?raw=true)
 
 --- 
 
 - User Input Validation: Ensures valid user input by checking for alphabetical characters and length constraints for names and guesses.
+  
+- For the scoreboard, users get to enter their username and I have decided to include both letters and numbers to give them more freedom. The reason why I included numbers as well is because this is a game, and users might want to use nicknames or other usernames to display their score. Anything other than letters or numbers will be invalid, and the user will be asked to enter another input. 
 
 --- 
+
 - Background image: The background image is added to improve the design and layout for the game. 
 Since it is a command line application, the image had to be downloaded as an SVG since Heroku does not handle static files. I added a div in the HTML elements and finished with some styling rules to the SVG code, in order for the image to fit on Heroku. Adding a image representing hangman game improves visibility and makes the game more fun and exciting.
 
@@ -281,12 +289,21 @@ Since it is a command line application, the image had to be downloaded as an SVG
 ### Additional Features
 
 - Welcome Messages and ASCII Art: Generates dynamic welcome messages and ASCII art for the game, enhancing the user experience.
+  
 - Scoring System: Calculates scores based on the difficulty of the word guessed and updates the global leaderboard accordingly.
+  
 - Scoreboard Management: Manages a scoreboard stored in Google Sheets, displaying the top scores and providing feedback on whether a player 
  has made the leaderboard.
+
 - Gameplay Feedback: Provides immediate feedback on player guesses, including whether a guess is correct, incorrect, or already guessed.
+
+![Invalid input](https://github.com/Alisha98A/hangman-game/blob/main/docs/invalid_input1.png?raw=true)
+
+![Invalid input no2](https://github.com/Alisha98A/hangman-game/blob/main/docs/invalid_input2.png?raw=true)
+
 - Game Flow Control: Includes options for players to review the game rules, restart the game, or view the scoreboard, enhancing usability and engagement.
 
+![End game](https://github.com/Alisha98A/hangman-game/blob/main/docs/game_end.png?raw=true)
 
 
 ---
@@ -545,7 +562,7 @@ Here's the adapted code:
 
 ###  Media
 
-The [background image](https://www.vecteezy.com/vector-art/169193-gallows-illustration) is taken from Vecteezy where I found an image of a hangman drawing with an SVG file, which I downloaded and put into html elements.
+The background image is taken from [Vecteezy](https://www.vecteezy.com/vector-art/169193-gallows-illustration) where I found an image of a hangman drawing with an SVG file, which I downloaded and put into html elements.
 
 ---
   
