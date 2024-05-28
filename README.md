@@ -208,15 +208,9 @@ The image represents a hangman drawing which will make the playing more fun beca
 
 ### Flowcharts
 
+To adhere to best practices, I initiated the development process by creating a flowchart for the app's logic prior to commencing coding. This was accomplished using the free version of Draw.io. It's important to note that the flowchart serves as a simplified visual representation of the Hangman Game. Although it encapsulates the fundamental operations and user interactions, certain implementation specifics and error-handling procedures have been omitted for the sake of clarity. The actual application logic might encompass further steps and validations that aren't illustrated in the flowchart.
 
-
-
-
-
-
-
-
-
+![Flowchart](https://github.com/Alisha98A/hangman-game/blob/main/docs/Flowcharts.png?raw=true)
 
 
 ---
@@ -251,20 +245,49 @@ To generate a list of installed Python packages use:  ```pip freeze```
 
 ### General features 
 
-#### Background image
-The background image is added to improve the design and layout for the game. 
-Since it is a command line application, the image had to be downloaded as an SVG since Heroku does not handle static files. I added a div in the HTML elements and finished with some styling rules to the SVG code, in order for the image to fit on Heroku. Adding a image representing hangman game improves visibility and makes the game more fun and exciting. 
-![Background image feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/background_feature.png?raw=true)
+### Core Features
 
-#### Words for the game
-Words that user gets to guess are already provided as a feature. For their convenience, the words are selected randomly at every game so the user can just sit back, relax and play without having to come up with their own words. 
+- Google Sheets Integration: Utilizes Google Sheets API to store and retrieve high scores, allowing players to compete globally.I provided this function for the users to make the game competitive and addictive. Having a scoreboard with the top 5 scores globally will give the user a desire to keep playing to get on the scoreboard. Having the ability to add a username on the scoreboard will also increase the user experience since it is something personal, and people tend to like recognition.
+
+![Scoreboard feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/scoreboard.png?raw=true)
+
+---
+
+- Hangman Game Logic: Implements the classic Hangman game mechanics, including guessing letters, updating the game state, and determining 
+  win/loss conditions.
+
+---
+
+- Dynamic Word Selection: Words that user gets to guess are already provided as a feature. For their convenience, the words are selected randomly at every game so the user can just sit back, relax and play without having to come up with their own words.
 
 ![Words feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/words_feature.png?raw=true)
 
-#### High Score Table List
-I provided this function for the users to make the game competitive and addictive. Having a scoreboard with the top 5 scores globally will give the user a desire to keep playing to get on the scoreboard. Having the ability to add a username on the scoreboard will also increase the user experience since it is something personal, and people tend to like recognition. 
+---
+  
+- Interactive Terminal Interface: Provides a rich, interactive experience through the rich library, including colored output, ASCII art, and custom console commands.
 
-![Scoreboard feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/scoreboard.png?raw=true)
+--- 
+
+- User Input Validation: Ensures valid user input by checking for alphabetical characters and length constraints for names and guesses.
+
+--- 
+- Background image: The background image is added to improve the design and layout for the game. 
+Since it is a command line application, the image had to be downloaded as an SVG since Heroku does not handle static files. I added a div in the HTML elements and finished with some styling rules to the SVG code, in order for the image to fit on Heroku. Adding a image representing hangman game improves visibility and makes the game more fun and exciting.
+
+![Background image feature](https://github.com/Alisha98A/hangman-game/blob/main/docs/background_feature.png?raw=true)
+
+---
+
+### Additional Features
+
+- Welcome Messages and ASCII Art: Generates dynamic welcome messages and ASCII art for the game, enhancing the user experience.
+- Scoring System: Calculates scores based on the difficulty of the word guessed and updates the global leaderboard accordingly.
+- Scoreboard Management: Manages a scoreboard stored in Google Sheets, displaying the top scores and providing feedback on whether a player 
+ has made the leaderboard.
+- Gameplay Feedback: Provides immediate feedback on player guesses, including whether a guess is correct, incorrect, or already guessed.
+- Game Flow Control: Includes options for players to review the game rules, restart the game, or view the scoreboard, enhancing usability and engagement.
+
+
 
 ---
 
