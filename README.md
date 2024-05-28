@@ -268,7 +268,7 @@ To generate a list of installed Python packages use:  ```pip freeze```
 ---
   
 - Interactive Terminal Interface: Provides a rich, interactive experience through the rich library, including colored output, ASCII art, and custom console commands.
-- 
+  
 ![Rich](https://github.com/Alisha98A/hangman-game/blob/main/docs/rich.png?raw=true)
 
 --- 
@@ -550,6 +550,7 @@ Here's the adapted code:
 ![Code used 2](https://github.com/Alisha98A/hangman-game/blob/main/docs/code_used2.png?raw=true)
 
 --
+
 I utilized a crucial piece of functionality that significantly enhances the user experience: clearing the terminal window before displaying new content. This feature ensures that each round of the game starts with a clean slate, providing players with a fresh view of the current state of the game board and other relevant information.
 
 To implement this functionality, I adapted a code snippet from Matt Bodden, who was my mentor at The Code Institute. The function clear_terminal() is designed to execute a system command that clears the terminal window. The choice of command (cls for Windows systems and clear for Unix-based systems) is determined dynamically based on the operating system name, ensuring compatibility across different environments.
