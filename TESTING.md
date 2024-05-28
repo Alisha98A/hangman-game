@@ -28,13 +28,8 @@ Testing was conducted continuously throughout the development phase. Utilizing t
 
 ### Test environment
 
-* Desktop:
   * iMac 21.5
   * MacBook Pro (13-inch, 2017) 
-* Screen:
-  * Samsung Galaxy S8
-  * Iphone 12
-  * Iphone 12 Pro
 
 
 ### Browser compatibility
@@ -147,3 +142,111 @@ RESULT: All clear, no errors found
 | ERR-11 | Error Retrieving Scoreboard | Handle errors while retrieving scoreboard data| Simulated errors in show_scoreboard function| PASS | Errors retrieving scoreboard handled gracefully, error message displayed |
 | ERR-12 | Invalid Play Again Input | Prompt user again on invalid play again input| Entered invalid options for play again prompt| PASS | Invalid play again inputs handled correctly, prompted user again for valid input |
 | ERR-13 | Unexpected Error Handling | General unexpected error handling | Introduced random unexpected errors in the code| PASS | General unexpected errors handled gracefully, error messages displayed without crashing|
+
+#### User Interaction Test (UIA)
+| TestCase ID | Feature | Expected Outcome | Testing Performed | Result | Comment |
+|-------------|---------|-----------------|--------------------|--------|---------|
+| TC001       | Welcome Message Display | The application should display a welcome message using ASCII art. | Manually tested by running the application. | Passed | N/A |
+| TC002       | Rules Display | The application should display the rules of the Hangman game upon request. | Manually tested by requesting the rules during gameplay. | Passed | N/A |
+| TC003       | Word Selection | A random word from the predefined list should be selected for each game session. | Manually tested by checking the output of each game session. | Passed | N/A |
+| TC004       | Guess Input Validation | The application should accept only alphabetic inputs for guessing letters. | Manually tested by entering invalid inputs. | Passed | N/A |
+| TC005       | Score Calculation | The score calculation should reflect the length of the word multiplied by 10 if the word is guessed correctly, otherwise, it should be 0. | Manually tested by analyzing the score after each game session. | Passed | N/A |
+| TC006       | Scoreboard Update | The application should update the Google Sheets scoreboard with the player's name and score. | Manually tested by checking the Google Sheets after gameplay. | Passed | N/A |
+| TC007       | Scoreboard Retrieval | The application should retrieve and display the top 5 scores from the Google Sheets scoreboard. | Manually tested by viewing the scoreboard during gameplay. | Passed | N/A |
+| TC008       | Play Again Option | The application should offer the option to play again after each game session. | Manually tested by selecting the play again option. | Passed | N/A |
+| TC009       | Scoreboard Display | The application should display the scoreboard when requested. | Manually tested by requesting the scoreboard during gameplay. | Passed | N/A |
+| TC010       | Name Validation | The application should validate the player's name according to the defined criteria. | Manually tested by entering names of varying lengths and formats. | Passed | N/A |
+| TC011       | Game Over Condition | The game should end when the player has no more attempts left or guesses the word correctly. | Manually tested by reaching the game over condition through both winning and losing scenarios. | Passed | N/A |
+| TC012       | Error Handling | The application should handle errors gracefully, such as invalid inputs and issues updating the scoreboard. | Manually tested by intentionally introducing errors during gameplay. | Passed | N/A |
+
+#### Integration Test (ITC)
+| TestCase ID | Feature | Expected Outcome | Testing Performed | Result | Comment |
+|---|---|---|---|---|---|
+#### Integration Test Case (ITC)
+| TestCase ID | Feature | Expected Outcome | Testing Performed | Result | Comment |
+|-------------|---------|-----------------|--------------------|--------|---------|
+| ITC001      | Google Sheets API Authentication | The application should successfully authenticate with the Google Sheets API using the provided credentials. | Manually tested by attempting to access the Google Sheets API. | Passed | No errors encountered during authentication. |
+| ITC002      | Google Sheets API Data Retrieval | The application should retrieve data from the 'scoreboard' worksheet without errors. | Manually tested by attempting to read data from the 'scoreboard' worksheet. | Passed | Data retrieved successfully. |
+| ITC003      | Google Sheets API Data Append | The application should append new data to the 'scoreboard' worksheet without errors. | Manually tested by attempting to add a new row to the 'scoreboard' worksheet. | Passed | New data added successfully. |
+| ITC004      | Terminal Output | The application should display ASCII art messages, game rules, hangman stages, and user prompts correctly in the terminal. | Manually tested by running the application and observing the terminal output. | Passed | All messages and prompts displayed as expected. |
+| ITC005      | User Input Handling | The application should correctly handle user inputs for guessing letters, validating names, and responding to yes/no prompts. | Manually tested by interacting with the application through the terminal. | Passed | Application responded correctly to all user inputs. |
+| ITC006      | Game Logic | The game should correctly determine win/loss conditions, calculate scores, and update the scoreboard based on game outcomes. | Manually tested by playing several rounds of the game and verifying the game's decisions. | Passed | Game logic worked as expected. |
+| ITC007      | Score Calculation | The score calculation should accurately reflect the length of the word multiplied by 10 if the word is guessed correctly, otherwise, it should be 0. | Manually tested by analyzing the score after each game session. | Passed | Score calculation accurate. |
+| ITC008      | Error Handling | The application should gracefully handle errors, such as invalid inputs and issues updating the scoreboard, without crashing. | Manually tested by intentionally introducing errors during gameplay. | Passed | Application handled errors gracefully. |
+| ITC009      | Hangman Drawing Display | The application should display the correct hangman drawing based on the number of incorrect guesses. | Manually tested by progressing through the game and observing the hangman drawings. | Passed | Hangman drawings displayed correctly. |
+| ITC010      | Yes/No Input Validation | The application should validate yes/no inputs for game-related prompts. | Manually tested by providing invalid inputs. | Passed | Validations worked as expected. |
+
+### Failed  test cases
+None
+*<span style="color: blue;">[Back to Content](#content)</span>*
+## DEFECTS
+### Bug-01
+
+Error message on Game Rules list type because line is too long. 
+![Bug 1](https://github.com/Alisha98A/hangman-game/blob/main/docs/problem1.png?raw=true)
+
+
+
+#### Solution-Bug-01
+
+Solved it by adding one line into multiple lines with help of this:   """ \
+(See picture below)
+![Solution 1](https://github.com/Alisha98A/hangman-game/blob/main/docs/solution1.png?raw=true)
+
+
+
+### Bug-02
+
+In this function aswell, I got error messages saying line is too long. For easier readability and to remove the problem. I had to fix this. 
+![Bug 2](https://github.com/Alisha98A/hangman-game/blob/main/docs/problem2.png?raw=true)
+
+### Solution Bug-02
+
+To fix this problem I had to break this line into multiple lines. 
+(See picture below)
+
+![Solution 2](https://github.com/Alisha98A/hangman-game/blob/main/docs/solution2.png?raw=true)
+### Bug-03
+
+The main problem arose from misunderstanding how Python's sorted() function works, especially when applied to the dataset. I didn't implement the lambda function correctly within the key parameter, which resulted in the records being sorted incorrectly. On top of that, I misapplied the slicing of the sorted list to get the top five records, which caused more issues in getting the desired output.
+
+(Unfortunately I don't have any image of the bugging code since I commited it after solution)
+
+### Solution Bug-3
+
+To fix the issue, I carefully reviewed the documentation for Python's sorted() function and corrected the lambda function implementation. By using key=lambda x: int(x['Score']), I made sure the sorting was based on the numerical value of the 'Score' key in each dictionary in the records list. Additionally, I added reverse=True to the sorted() call to sort the records in descending order.
+
+To extract the top five records after sorting, we used slicing syntax [:5]. This change enabled us to accurately retrieve the highest-scoring records from our sorted list, resolving the bug and achieving the intended functionality.
+By overcoming this challenge, I were able to refine the approach to sorting and filtering data, ultimately enhancing the quality and reliability of my project outcomes.
+
+![Solution3 ](https://github.com/Alisha98A/hangman-game/blob/main/docs/solution3.png?raw=true)
+
+### Bug-04
+
+The application would fail when trying to add a new score, either crashing or displaying an error message indicating that the operation couldn't be completed due to missing methods or improperly initialized objects.
+
+Appending new scores to the scoreboard. The code have attempted to append rows without checking if the scoreboard object had the necessary method (append_row). 
+
+
+### Solution-04
+
+I reviewed the documentation or source code for the scoreboard object to confirm it includes an append_row method and to understand the correct way to use it. Ensured that the scoreboard object is properly initialized before using it. 
+
+I verified the existence of the append_row method on the scoreboard object, using Python's dynamic typing features or type hinting if needed.
+
+Finally, after making the necessary fixes, I tested the add_score_to_scoreboard function and made sure it performed correctly in various scenarios, including edge cases such as adding scores that surpass existing top scores and handling empty scoreboards.
+
+![Solution4](https://github.com/Alisha98A/hangman-game/blob/main/docs/solution4.png?raw=true)
+
+
+- - -
+### UNSOLVED issue
+
+Nothing unsolved
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+- - -
+### KNOWN issue
+None identified
+*<span style="color: blue;">[Back to Content](#content)</span>*
+- - -
