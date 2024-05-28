@@ -96,11 +96,6 @@ This skeleton provides a high-level overview of how the game flows from initiali
 - The rules should explain how the game works with clear instructions 1-5
 
 
-### User Story for Returning Players
-#### User Story 2: As a returning player, I would like to continue my previous game session so that I can pick up where I left off.
-- The game should prompt returning players to enter their username to retrieve their saved game state.
-- If a saved game exists, the player should be able to resume their game immediately.
-
 #### User Story 3: As a returning player, I would like to view the leaderboard to see how I rank among the other players.
 - The game should display a leaderboard fetched from Google Sheets.
 - The leaderboard should show the top scores and usernames.
@@ -479,60 +474,62 @@ Please refer to the file [TESTING.md](TESTING.md) for all tests performed.
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
 ## Credits
+ [here](https://github.com/kera-cudmore/BookWorm#Credits)
 
-👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
-
-The Credits section is where you can credit all the people and sources you used throughout your project.
 
 ### Code Used
 
-If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
 
-### Content
+Integrating Google Sheets API functionalities was a strategic decision aimed at enhancing the game's data management and analytics capabilities. To facilitate this integration, I defined a set of scopes that specify the permissions required for accessing Google Sheets and Google Drive services. These scopes ensure that the application has the necessary access rights to read from and write to spreadsheets and manage files within Google Drive. This code is adapted from Code Institute's Love Sandwiches follow along video.
 
-Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
+Here's the adapted code:
+![Code used 1](https://github.com/Alisha98A/hangman-game/blob/main/docs/code%20used1.png?raw=true)
+
+--
+
+Incorporating a visually engaging element was essential to enhance player engagement and immersion. One such element is the display of the Hangman logo at the start of the game, which serves as both a visual cue and a part of the game's theme. To achieve this, I adapted a code snippet from a tutorial on Real Python.
+The print_hangman_logo function is designed to display the Hangman logo in the terminal. It utilizes a multiline string to define the ASCII art representation of the Hangman figure. This approach allows for easy modification of the logo, which I've made some changes to. 
+
+Here's the adapted code:
+![Code used 2](https://github.com/Alisha98A/hangman-game/blob/main/docs/code_used2.png?raw=true)
+
+--
+I utilized a crucial piece of functionality that significantly enhances the user experience: clearing the terminal window before displaying new content. This feature ensures that each round of the game starts with a clean slate, providing players with a fresh view of the current state of the game board and other relevant information.
+
+To implement this functionality, I adapted a code snippet from Matt Bodden, who was my mentor at The Code Institute. The function clear_terminal() is designed to execute a system command that clears the terminal window. The choice of command (cls for Windows systems and clear for Unix-based systems) is determined dynamically based on the operating system name, ensuring compatibility across different environments.
+
+Here's the adapted code:
+![Code used 3](https://github.com/Alisha98A/hangman-game/blob/main/docs/code_used3.png?raw=true)
+
+
 
 ###  Media
 
-If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
+The [background image](https://www.vecteezy.com/vector-art/169193-gallows-illustration) is taken from Vecteezy where I found an image of a hangman drawing with an SVG file, which I downloaded and put into html elements.
   
 ###  Acknowledgments
 
-If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
+- I would like to thank [Matt Bodden](https://github.com/MattBCoding) who really took the time to help me! So grateful to have him as my mentor!
+- Code Institute Slack Community has been a big support.
+- This project was influenced by Love Sandwiches, a code-along project from Code Institute. By trying to understand the underlying principles I have tried to adapt them to my own project. However, this might involve using similar/same intitials and setup.
 
 
 
-Credit section
-https://www.youtube.com/watch?v=earqUEBeudg helped me structure coding with flowcharts for the game
-Love Sandwiches follow along video - for setting up credentials and API for the project
-https://www.w3schools.com/python/ref_string_split.asp learned how to use split method for my words list
-ASCII art generated by 'pyfiglet'. Source from: https://pypi.org/project/art/
-defining main functions https://realpython.com/python-main-function/
-https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/ for i in range method
-https://www.youtube.com/watch?v=XwaEo4f17LU list indexing
-learned how to make the drawing stages https://www.youtube.com/watch?v=WV2zPAVRekY
-https://www.vecteezy.com/vector-art/169193-gallows-illustration for the background image
-
-
-
-Credit section
-https://www.youtube.com/watch?v=earqUEBeudg helped me structure coding with flowcharts for the game
-Love Sandwiches follow along video - for setting up credentials and API for the project
-https://www.w3schools.com/python/ref_string_split.asp learned how to use split method for my words list
-ASCII art generated by 'pyfiglet'. Source from: https://pypi.org/project/art/
-defining main functions https://realpython.com/python-main-function/
-https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/ for i in range method
-https://www.youtube.com/watch?v=XwaEo4f17LU list indexing
-learned how to make the drawing stages https://www.youtube.com/watch?v=WV2zPAVRekY
-main game function https://realpython.com/python-hangman/
-hangman drawing adapted from https://www.youtube.com/watch?v=XwaEo4f17LU
-https://www.w3schools.com/python/ref_string_join.asp function to display the current word
-#https://www.youtube.com/watch?v=N_6YIClAor0 function to display the current word
-https://www.w3schools.com/python/ref_random_choice.asp choose a random word
-# Function to select a random word from the list of words
-# Code adapted from:https://www.w3schools.com/python/ref_random_choice.asp
-# Function to display the current state of the word with guessed letters https://www.w3schools.com/python/ref_string_join.asp and https://www.youtube.com/watch?v=N_6YIClAor0
-
-colour palette from [coolors](https://coolors.co/)
+### Content
+- [Jenny's Lectures CS IT Youtube video](https://www.youtube.com/watch?v=earqUEBeudg) helped me structure coding with flowcharts for the game
+- Love Sandwiches follow along video - for setting up credentials and API for the project
+- [W3Schools Split method](https://www.w3schools.com/python/ref_string_split.asp) learned how to use split method for my words list
+- ASCII art generated by 'pyfiglet'. Source from: [Pypy](https://pypi.org/project/art/)
+- Defining main functions from [Real Python](https://realpython.com/python-main-function/)
+- Learned about 'for i in range method' fron [Free code camp](https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/)
+- Learned list indexing from [John Watson Rooney's Youtube video](https://www.youtube.com/watch?v=XwaEo4f17LU) 
+- Learned how to make the drawing stages from [Catalin tech's youtube video](https://www.youtube.com/watch?v=WV2zPAVRekY)
+- Learned about the main game function from [Real Python](https://realpython.com/python-hangman/)
+- Hangman drawing adapted from [John Watson Rooney's youtube video](https://www.youtube.com/watch?v=XwaEo4f17LU)
+- [W3Schools](https://www.w3schools.com/python/ref_string_join.asp) and [Portfolio Courses youtube video](https://www.youtube.com/watch?v=N_6YIClAor0)  on function to display the current word
+- Learned about choosing a random word from [W3Schools](https://www.w3schools.com/python/ref_random_choice.asp) 
+- Function to select a random word from the list of words from [W3Schools](https://www.w3schools.com/python/ref_random_choice.asp)
+- Function to display the current state of the word with guessed letters [W3Schools](https://www.w3schools.com/python/ref_string_join.asp) and [Portfolio Courses youtube video](https://www.youtube.com/watch?v=N_6YIClAor0)
+- Took the color palette generator from [coolors](https://coolors.co/) (for content in README.md file)
 
 
